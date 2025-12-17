@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary;
+    @apply dark:bg-dark-background dark:text-dark-text-primary;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface dark:bg-dark-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent/80;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn-primary {
+    @apply bg-accent text-primary px-6 py-3 rounded-md font-medium;
+    @apply hover:bg-accent/90 transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50;
+    @apply dark:bg-accent dark:text-dark-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-text-primary px-6 py-3 rounded-md font-medium border border-border;
+    @apply hover:bg-surface/80 transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50;
+    @apply dark:bg-dark-surface dark:text-dark-text-primary dark:border-dark-border;
+  }
+
+  .btn-ghost {
+    @apply text-text-secondary px-4 py-2 rounded-md font-medium;
+    @apply hover:bg-surface hover:text-text-primary transition-all duration-200;
+    @apply dark:text-dark-text-secondary dark:hover:bg-dark-surface dark:hover:text-dark-text-primary;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-surface rounded-lg shadow-soft border border-border p-6;
+    @apply dark:bg-dark-surface dark:border-dark-border;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+
+  /* Form styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-md border border-border bg-background text-text-primary;
+    @apply placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent;
+    @apply dark:bg-dark-surface dark:border-dark-border dark:text-dark-text-primary dark:placeholder-dark-text-secondary;
+  }
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 2s infinite;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
+
+/* Theme transition */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
