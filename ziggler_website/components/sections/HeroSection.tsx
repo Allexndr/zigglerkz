@@ -8,27 +8,43 @@ import { Button } from '@/components/ui/Button'
 const heroSlides = [
   {
     id: 1,
-    title: 'Идеальный костюм для вашего стиля',
-    subtitle: 'Премиум качество. Доступные цены. Быстрая доставка',
-    image: '/hero-1.jpg',
-    cta: 'Смотреть каталог',
+    title: 'Элегантный бутик мужской одежды',
+    subtitle: 'Премиум костюмы ручной работы в классическом стиле',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=1200&h=800&fit=crop',
+    cta: 'Смотреть коллекцию',
     ctaLink: '/catalog',
   },
   {
     id: 2,
-    title: 'Эксклюзивная коллекция 2025',
-    subtitle: 'Итальянские ткани. Корейское производство. Казахстанское качество',
-    image: '/hero-2.jpg',
-    cta: 'Узнать больше',
-    ctaLink: '/collections/exclusive-2025',
+    title: 'Современный showroom костюмов',
+    subtitle: 'Эксклюзивные модели от ведущих итальянских дизайнеров',
+    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=1200&h=800&fit=crop',
+    cta: 'Посмотреть бутик',
+    ctaLink: '/about',
   },
   {
     id: 3,
-    title: 'Персональный подбор стиля',
-    subtitle: 'Ответьте на 5 вопросов и получите рекомендации от нашего стилиста',
-    image: '/hero-3.jpg',
-    cta: 'Подобрать костюм',
+    title: 'Премиум примерочная с персональным стилистом',
+    subtitle: 'Индивидуальный подбор костюма под вашу фигуру и стиль',
+    image: 'https://images.unsplash.com/photo-1506629905607-9b9f09b09124?w=1200&h=800&fit=crop',
+    cta: 'Записаться на примерку',
     ctaLink: '#personalization',
+  },
+  {
+    id: 4,
+    title: 'Коллекция эксклюзивных аксессуаров',
+    subtitle: 'Галстуки, запонки и ремни от мировых брендов',
+    image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=1200&h=800&fit=crop',
+    cta: 'Посмотреть аксессуары',
+    ctaLink: '/accessories',
+  },
+  {
+    id: 5,
+    title: 'Свадебные костюмы на заказ',
+    subtitle: 'Идеальный образ для вашего особого дня',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&h=800&fit=crop',
+    cta: 'Создать образ',
+    ctaLink: '/wedding-collection',
   },
 ]
 
@@ -39,7 +55,7 @@ export function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 5000)
+    }, 6000) // Увеличено до 6 секунд для лучшего просмотра бутиков
 
     return () => clearInterval(timer)
   }, [])
@@ -53,7 +69,7 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-[85vh] sm:h-screen flex items-center overflow-hidden">
       {/* Background Slides */}
       {heroSlides.map((slide, index) => (
         <div
@@ -66,10 +82,10 @@ export function HeroSection() {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${slide.image})`,
-              filter: 'brightness(0.4)',
+              filter: 'brightness(0.5) contrast(0.9)',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent" />
         </div>
       ))}
 
@@ -95,21 +111,21 @@ export function HeroSection() {
       )}
 
       {/* Content */}
-      <div className="relative z-10 container-padding">
-        <div className="max-w-2xl">
+      <div className="relative z-10 container-padding py-8 sm:py-12">
+        <div className="max-w-2xl mx-auto sm:mx-0">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="mobile-heading sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight text-center sm:text-left">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="mobile-text sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 leading-relaxed text-center sm:text-left max-w-lg mx-auto sm:mx-0">
               {heroSlides[currentSlide].subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center sm:justify-start">
               <Link href={heroSlides[currentSlide].ctaLink}>
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-primary px-8 py-4 text-lg">
+                <Button size="lg" className="mobile-button sm:px-8 sm:py-4 sm:text-lg bg-accent hover:bg-accent/90 text-primary w-full sm:w-auto justify-center">
                   {heroSlides[currentSlide].cta}
-                  <ArrowRight size={20} className="ml-2" />
+                  <ArrowRight size={18} className="ml-2" />
                 </Button>
               </Link>
 
@@ -117,27 +133,27 @@ export function HeroSection() {
                 variant="secondary"
                 size="lg"
                 onClick={() => setIsVideoPlaying(true)}
-                className="px-8 py-4 text-lg"
+                className="mobile-button sm:px-8 sm:py-4 sm:text-lg w-full sm:w-auto justify-center"
               >
-                <Play size={20} className="mr-2" />
+                <Play size={18} className="mr-2" />
                 Смотреть видео
               </Button>
             </div>
           </div>
 
           {/* Quick Stats */}
-          <div className="mt-12 grid grid-cols-3 gap-8 text-white/80">
+          <div className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-8 text-white/80 max-w-md mx-auto sm:mx-0 sm:max-w-none">
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent">500+</div>
-              <div className="text-sm md:text-base">Довольных клиентов</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">500+</div>
+              <div className="mobile-text sm:text-sm md:text-base">Довольных клиентов</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent">50+</div>
-              <div className="text-sm md:text-base">Моделей костюмов</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">50+</div>
+              <div className="mobile-text sm:text-sm md:text-base">Моделей костюмов</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-accent">24/7</div>
-              <div className="text-sm md:text-base">Поддержка</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-accent">24/7</div>
+              <div className="mobile-text sm:text-sm md:text-base">Поддержка</div>
             </div>
           </div>
         </div>

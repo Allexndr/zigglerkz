@@ -6,15 +6,15 @@ from aiogram.enums import ParseMode
 
 from config.config import config
 from handlers import register_all_handlers
-from models.database import init_db
+from lib.mongodb import MongoDB
 from utils.logger import setup_logger
 
 async def main():
     # Настройка логирования
     setup_logger()
 
-    # Инициализация базы данных
-    await init_db()
+    # Подключение к MongoDB
+    await MongoDB.connect()
 
     # Инициализация бота и диспетчера
     bot = Bot(

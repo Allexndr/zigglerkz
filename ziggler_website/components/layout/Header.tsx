@@ -23,11 +23,11 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border dark:bg-dark-background/95 dark:border-dark-border">
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border dark:bg-dark-background/90 dark:border-dark-border">
       <div className="container-padding">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-accent hover:text-accent/80 transition-colors">
+          <Link href="/" className="text-xl sm:text-2xl font-bold text-accent hover:text-accent/80 transition-colors">
             Ziggler
           </Link>
 

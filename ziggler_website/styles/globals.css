@@ -19,15 +19,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-surface dark:bg-dark-surface;
+    background-color: #f1f1f1;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-accent rounded-full;
+    background-color: #D4AF37;
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-accent/80;
+    background-color: rgba(212, 175, 55, 0.8);
   }
 }
 
@@ -90,11 +91,46 @@
   }
 
   .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12;
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-12 sm:py-16 lg:py-20 xl:py-24;
+  }
+
+  /* Mobile-first utilities */
+  .mobile-padding {
+    @apply px-3 py-8;
+  }
+
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .mobile-button {
+    @apply h-10 px-4 py-2 text-base;
+  }
+
+  .mobile-card {
+    @apply p-4;
+  }
+
+  /* Touch-friendly elements */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Subtle gradients for elegance */
+  .gradient-subtle {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, rgba(31, 41, 55, 0.02) 100%);
+  }
+
+  .gradient-warm {
+    background: linear-gradient(135deg, rgba(250, 247, 242, 1) 0%, rgba(245, 241, 235, 1) 100%);
   }
 }
 

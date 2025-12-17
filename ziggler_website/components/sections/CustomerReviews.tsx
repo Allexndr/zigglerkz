@@ -12,8 +12,8 @@ const reviews = [
     position: 'Руководитель компании',
     rating: 5,
     text: 'Заказал классический костюм для деловых встреч. Качество потрясающее! Ткань премиум класса, посадка идеальная. Доставили точно в срок. Очень доволен покупкой!',
-    image: '/review-1.jpg',
-    suitImage: '/suit-review-1.jpg',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    suitImage: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&h=600&fit=crop',
     date: '2025-01-15',
   },
   {
@@ -22,8 +22,8 @@ const reviews = [
     position: 'Стилист',
     rating: 5,
     text: 'Работаю стилистом и знаю толк в костюмах. Ziggler предлагает действительно качественные изделия по адекватным ценам. Клиентам рекомендую!',
-    image: '/review-2.jpg',
-    suitImage: '/suit-review-2.jpg',
+    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face',
+    suitImage: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=600&fit=crop',
     date: '2025-01-10',
   },
   {
@@ -32,8 +32,8 @@ const reviews = [
     position: 'Бизнесмен',
     rating: 5,
     text: 'Купил костюм для свадьбы брата. Выглядит потрясающе! Персональный подход, качественный пошив, отличный сервис. Буду заказывать еще.',
-    image: '/review-3.jpg',
-    suitImage: '/suit-review-3.jpg',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    suitImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=600&fit=crop',
     date: '2025-01-08',
   },
   {
@@ -42,8 +42,8 @@ const reviews = [
     position: 'Журналист',
     rating: 5,
     text: 'Заказывала костюм для фотосессии. Результат превзошел ожидания! Детали проработаны идеально. Спасибо за профессионализм.',
-    image: '/review-4.jpg',
-    suitImage: '/suit-review-4.jpg',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+    suitImage: 'https://images.unsplash.com/photo-1506629905607-9b9f09b09124?w=400&h=600&fit=crop',
     date: '2025-01-05',
   },
 ]

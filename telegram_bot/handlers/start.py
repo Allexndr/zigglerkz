@@ -2,9 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import Command
 from keyboards.main_menu import get_main_keyboard, get_main_menu_buttons
-from models.database import User, get_session
-from sqlalchemy import select
-from datetime import datetime
+from services.user_service import UserService
 
 router = Router()
 
@@ -16,28 +14,12 @@ async def cmd_start(message: Message):
     full_name = message.from_user.full_name
 
     # Сохраняем или обновляем пользователя в БД
-    async with get_session() as session:
-        # Проверяем, существует ли пользователь
-        result = await session.execute(
-            select(User).where(User.telegram_id == telegram_id)
-        )
-        user = result.scalar_one_or_none()
-
-        if user:
-            # Обновляем информацию о пользователе
-            user.username = username
-            user.full_name = full_name
-            user.updated_at = datetime.utcnow()
-        else:
-            # Создаем нового пользователя
-            user = User(
-                telegram_id=telegram_id,
-                username=username,
-                full_name=full_name
-            )
-            session.add(user)
-
-        await session.commit()
+    user = await UserService.create_or_update_user({
+        "id": telegram_id,
+        "username": username,
+        "first_name": message.from_user.first_name,
+        "last_name": message.from_user.last_name
+    })
 
     # Приветственное сообщение
     welcome_text = (

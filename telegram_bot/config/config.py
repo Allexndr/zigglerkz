@@ -6,7 +6,7 @@ load_dotenv()
 
 class Config:
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "8542343040:AAFf60s5j84QU33caha4JcxLhNbPMUrZU7A")
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/ziggler_bot")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///ziggler_bot.db")
     REDIS_URL: str = os.getenv("REDIS_URL", "redis://localhost:6379")
     ADMIN_IDS: List[int] = [int(x) for x in os.getenv("ADMIN_IDS", "123456789").split(",")]
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO")

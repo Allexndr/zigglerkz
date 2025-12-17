@@ -146,7 +146,6 @@ async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
-async def get_session() -> AsyncSession:
+def get_session() -> AsyncSession:
     """Получение сессии базы данных"""
-    async with async_session() as session:
-        yield session
+    return async_session()

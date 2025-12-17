@@ -10,16 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Light theme colors
         primary: '#1F2937', // Deep Charcoal
         accent: '#D4AF37', // Premium Gold
-        background: '#FFFFFF', // Pure White
-        surface: '#F9FAFB', // Soft Gray
+        background: '#F9FAFB', // Almost White
+        surface: '#F3F4F6', // Light Gray
         text: {
-          primary: '#111827', // Rich Black
-          secondary: '#6B7280', // Muted Gray
+          primary: '#111827', // Almost Black
+          secondary: '#6B7280', // Gray
         },
-        border: '#E5E7EB', // Light Gray
+        border: '#E5E7EB' // Light Border
 
         // Dark theme colors
         dark: {

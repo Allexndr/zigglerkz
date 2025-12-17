@@ -100,41 +100,41 @@ export function PersonalizationQuiz() {
 
   if (isCompleted) {
     return (
-      <section id="personalization" className="section-padding bg-surface dark:bg-dark-surface">
+      <section id="personalization" className="mobile-padding sm:section-padding bg-surface dark:bg-dark-surface">
         <div className="container-padding">
           <div className="max-w-2xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🎯</span>
+            <div className="mb-6 sm:mb-8">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <span className="text-2xl sm:text-3xl">🎯</span>
               </div>
-              <h2 className="text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-4">
+              <h2 className="mobile-heading sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-3 sm:mb-4">
                 Персональные рекомендации готовы!
               </h2>
-              <p className="text-text-secondary dark:text-dark-text-secondary">
+              <p className="mobile-text sm:text-base text-text-secondary dark:text-dark-text-secondary">
                 На основе ваших ответов мы подобрали идеальные костюмы для вас
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              <div className="text-center p-4 bg-background dark:bg-dark-background rounded-lg">
-                <div className="text-2xl mb-2">{answers[1] === 'business' ? '💼' : answers[1] === 'wedding' ? '💒' : '🎉'}</div>
-                <div className="text-sm text-text-secondary dark:text-dark-text-secondary">Случай</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 max-w-sm sm:max-w-none mx-auto">
+              <div className="text-center p-3 sm:p-4 bg-background dark:bg-dark-background rounded-lg">
+                <div className="text-xl sm:text-2xl mb-2">{answers[1] === 'business' ? '💼' : answers[1] === 'wedding' ? '💒' : '🎉'}</div>
+                <div className="mobile-text sm:text-sm text-text-secondary dark:text-dark-text-secondary">Случай</div>
               </div>
-              <div className="text-center p-4 bg-background dark:bg-dark-background rounded-lg">
-                <div className="text-2xl mb-2">{answers[2] === 'luxury' ? '🏆' : answers[2] === 'premium' ? '💎' : '💰'}</div>
-                <div className="text-sm text-text-secondary dark:text-dark-text-secondary">Бюджет</div>
+              <div className="text-center p-3 sm:p-4 bg-background dark:bg-dark-background rounded-lg">
+                <div className="text-xl sm:text-2xl mb-2">{answers[2] === 'luxury' ? '🏆' : answers[2] === 'premium' ? '💎' : '💰'}</div>
+                <div className="mobile-text sm:text-sm text-text-secondary dark:text-dark-text-secondary">Бюджет</div>
               </div>
-              <div className="text-center p-4 bg-background dark:bg-dark-background rounded-lg">
-                <div className="text-2xl mb-2">{answers[5] === 'xs' ? '📏' : '👔'}</div>
-                <div className="text-sm text-text-secondary dark:text-dark-text-secondary">Размер</div>
+              <div className="text-center p-3 sm:p-4 bg-background dark:bg-dark-background rounded-lg">
+                <div className="text-xl sm:text-2xl mb-2">{answers[5] === 'xs' ? '📏' : '👔'}</div>
+                <div className="mobile-text sm:text-sm text-text-secondary dark:text-dark-text-secondary">Размер</div>
               </div>
             </div>
 
-            <div className="space-y-4">
-              <Button onClick={handleViewResults} size="lg" className="w-full sm:w-auto">
+            <div className="space-y-3 sm:space-y-4">
+              <Button onClick={handleViewResults} size="lg" className="mobile-button sm:px-8 sm:py-4 sm:text-lg w-full">
                 Посмотреть рекомендации
               </Button>
-              <Button onClick={handleRestart} variant="ghost" className="w-full sm:w-auto">
+              <Button onClick={handleRestart} variant="ghost" className="mobile-button w-full">
                 Пройти заново
               </Button>
             </div>
@@ -147,14 +147,14 @@ export function PersonalizationQuiz() {
   const question = questions[currentQuestion]
 
   return (
-    <section id="personalization" className="section-padding bg-background dark:bg-dark-background">
+    <section id="personalization" className="mobile-padding sm:section-padding bg-gradient-subtle dark:bg-dark-background">
       <div className="container-padding">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <h2 className="mobile-heading sm:text-3xl font-bold text-text-primary dark:text-dark-text-primary mb-3 sm:mb-4">
               Подберём идеальный костюм для вас
             </h2>
-            <p className="text-text-secondary dark:text-dark-text-secondary">
+            <p className="mobile-text sm:text-base text-text-secondary dark:text-dark-text-secondary">
               Ответьте на 5 вопросов и получите персональные рекомендации
             </p>
           </div>
@@ -173,21 +173,21 @@ export function PersonalizationQuiz() {
             </div>
           </div>
 
-          <Card className="p-8">
-            <h3 className="text-xl font-semibold text-text-primary dark:text-dark-text-primary mb-6 text-center">
+          <Card className="mobile-card sm:p-8">
+            <h3 className="mobile-heading sm:text-xl font-semibold text-text-primary dark:text-dark-text-primary mb-4 sm:mb-6 text-center">
               {question.question}
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-4 sm:mb-6">
               {question.options.map((option) => (
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(question.id, option.value)}
-                  className="p-4 border border-border dark:border-dark-border rounded-lg hover:border-accent hover:bg-accent/5 dark:hover:bg-accent/5 transition-all duration-200 text-left"
+                  className="mobile-button sm:p-4 border border-border dark:border-dark-border rounded-lg hover:border-accent hover:bg-accent/5 dark:hover:bg-accent/5 transition-all duration-200 text-left touch-target"
                 >
                   <div className="flex items-center space-x-3">
-                    <span className="text-2xl">{option.emoji}</span>
-                    <span className="text-text-primary dark:text-dark-text-primary">
+                    <span className="text-xl sm:text-2xl">{option.emoji}</span>
+                    <span className="mobile-text sm:text-base text-text-primary dark:text-dark-text-primary">
                       {option.label}
                     </span>
                   </div>
@@ -196,7 +196,7 @@ export function PersonalizationQuiz() {
             </div>
 
             {currentQuestion > 0 && (
-              <Button onClick={handleBack} variant="ghost" className="w-full">
+              <Button onClick={handleBack} variant="ghost" className="mobile-button sm:w-auto">
                 ← Назад
               </Button>
             )}
