@@ -2,8 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import Command
 from keyboards.main_menu import get_back_to_menu_keyboard
-from models.database import Order, OrderItem, Product, get_session
-from sqlalchemy import select, desc
+from services.order_service import OrderService
 
 router = Router()
 
@@ -13,11 +12,8 @@ async def cmd_orders(message: Message):
     """Показать заказы пользователя"""
     user_id = message.from_user.id
 
-    async with get_session() as session:
-        result = await session.execute(
-            select(Order).where(Order.user_id == user_id).order_by(desc(Order.created_at))
-        )
-        orders = result.scalars().all()
+    # Получаем заказы пользователя
+    orders = await OrderService.getUserOrders(user_id)
 
     if not orders:
         text = (
@@ -70,11 +66,8 @@ async def callback_orders(callback: CallbackQuery):
     """Показать заказы через callback"""
     user_id = callback.from_user.id
 
-    async with get_session() as session:
-        result = await session.execute(
-            select(Order).where(Order.user_id == user_id).order_by(desc(Order.created_at))
-        )
-        orders = result.scalars().all()
+    # Получаем заказы пользователя
+    orders = await OrderService.getUserOrders(user_id)
 
     if not orders:
         text = (
@@ -120,54 +113,45 @@ async def callback_orders(callback: CallbackQuery):
 @router.callback_query(F.data.startswith("order_details_"))
 async def callback_order_details(callback: CallbackQuery):
     """Показать детали заказа"""
-    order_id = int(callback.data.replace("order_details_", ""))
+    order_id = callback.data.replace("order_details_", "")
     user_id = callback.from_user.id
 
-    async with get_session() as session:
-        # Получаем заказ
-        result = await session.execute(
-            select(Order).where(Order.id == order_id, Order.user_id == user_id)
-        )
-        order = result.scalar_one_or_none()
+    # Получаем заказ
+    order = await OrderService.getOrderById(order_id, user_id)
 
-        if not order:
-            await callback.answer("Заказ не найден")
-            return
+    if not order:
+        await callback.answer("Заказ не найден")
+        return
 
-        # Получаем товары заказа
-        items_result = await session.execute(
-            select(OrderItem, Product).join(
-                Product, OrderItem.product_id == Product.id
-            ).where(OrderItem.order_id == order_id)
-        )
-        items = items_result.all()
+    # Товары уже встроены в заказ
+    items = order["items"]
 
-    status_emoji = get_status_emoji(order.status)
-    status_text = get_status_text(order.status)
+    status_emoji = get_status_emoji(order["orderStatus"])
+    status_text = get_status_text(order["orderStatus"])
 
     text = (
-        f"📋 <b>Заказ #{order.id}</b>\n\n"
-        f"📅 Дата: {order.created_at.strftime('%d.%m.%Y %H:%M')}\n"
+        f"📋 <b>Заказ #{order['orderNumber']}</b>\n\n"
+        f"📅 Дата: {order['createdAt'].strftime('%d.%m.%Y %H:%M')}\n"
         f"{status_emoji} Статус: {status_text}\n"
-        f"💰 Сумма: {order.total_price:,} ₸\n"
-        f"🚚 Доставка: {order.delivery_type}\n"
-        f"📍 Адрес: {order.delivery_address or 'Не указан'}\n"
-        f"📱 Телефон: {order.phone}\n"
+        f"💰 Сумма: {order['total']:,} ₸\n"
+        f"📍 Адрес: {order['shippingAddress']['street']}\n"
+        f"📱 Телефон: {order['customerInfo']['phone']}\n"
     )
 
-    if order.email:
-        text += f"📧 Email: {order.email}\n"
+    if order['customerInfo']['email']:
+        text += f"📧 Email: {order['customerInfo']['email']}\n"
 
-    if order.notes:
-        text += f"📝 Примечание: {order.notes}\n"
+    if order['notes']:
+        text += f"📝 Примечание: {order['notes']}\n"
 
     text += "\n<b>Товары:</b>\n"
 
-    for item, product in items:
+    for item in items:
+        product = item["product"]
         text += (
-            f"• {product.name}\n"
-            f"   Размер: {item.size}, Цвет: {item.color}\n"
-            f"   Количество: {item.quantity} × {item.price:,} ₸\n\n"
+            f"• {product['name']}\n"
+            f"   Размер: {item['size']}, Цвет: {item['color']}\n"
+            f"   Количество: {item['quantity']} × {item['price']:,} ₸\n\n"
         )
 
     from aiogram.types import InlineKeyboardButton
@@ -175,7 +159,7 @@ async def callback_order_details(callback: CallbackQuery):
     builder = InlineKeyboardBuilder()
 
     builder.add(
-        InlineKeyboardButton(text="🚚 Отследить заказ", callback_data=f"track_order_{order.id}"),
+        InlineKeyboardButton(text="🚚 Отследить заказ", callback_data=f"track_order_{order['orderNumber']}"),
         InlineKeyboardButton(text="⬅️ Назад к заказам", callback_data="orders")
     )
 

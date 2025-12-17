@@ -6,7 +6,7 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.fsm.context import FSMContext
 from aiogram.types import User, Chat, Message, CallbackQuery
 
-from models.database import init_db, get_session, User as DBUser
+from lib.mongodb import MongoDB
 
 
 @pytest.fixture(scope="session")
@@ -20,7 +20,7 @@ def event_loop():
 @pytest.fixture(autouse=True)
 async def setup_database():
     """Initialize test database before each test."""
-    await init_db()
+    await MongoDB.connect()
     yield
     # Cleanup could be added here if needed
 
@@ -104,26 +104,15 @@ def mock_fsm_context():
 @pytest.fixture
 async def db_user(mock_user):
     """Create a test database user."""
+    from services.user_service import UserService
+
     user_data = {
-        "telegram_id": mock_user.id,
+        "id": mock_user.id,
         "username": mock_user.username,
-        "full_name": f"{mock_user.first_name} {mock_user.last_name}",
-        "language": mock_user.language_code or "ru"
+        "first_name": mock_user.first_name,
+        "last_name": mock_user.last_name
     }
 
-    async with get_session() as session:
-        # Check if user already exists
-        result = await session.execute(
-            session.query(DBUser).filter(DBUser.telegram_id == mock_user.id)
-        )
-        existing_user = result.scalar_one_or_none()
-
-        if existing_user:
-            return existing_user
-
-        # Create new user
-        user = DBUser(**user_data)
-        session.add(user)
-        await session.commit()
-        await session.refresh(user)
-        return user
+    # Create or update user using the service
+    user = await UserService.create_or_update_user(user_data)
+    return user

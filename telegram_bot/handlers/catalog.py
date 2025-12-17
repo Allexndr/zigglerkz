@@ -2,8 +2,7 @@ from aiogram import Router, F
 from aiogram.types import CallbackQuery, Message
 from aiogram.filters import Command
 from keyboards.main_menu import get_categories_keyboard, get_back_to_menu_keyboard, get_product_actions_keyboard
-from models.database import Product, Category, get_session
-from sqlalchemy import select, func
+from services.product_service import ProductService
 from typing import List, Dict, Any
 
 router = Router()
@@ -50,14 +49,8 @@ async def callback_category(callback: CallbackQuery):
         return
 
     # Получаем товары категории
-    async with get_session() as session:
-        result = await session.execute(
-            select(Product).where(
-                Product.category_id == category_id,
-                Product.is_active == True
-            ).limit(10)
-        )
-        products = result.scalars().all()
+    result = await ProductService.get_all_products(category=category_name, limit=10)
+    products = result["products"]
 
     if not products:
         text = "😔 В этой категории пока нет товаров.\nПопробуйте выбрать другую категорию."
@@ -70,7 +63,7 @@ async def callback_category(callback: CallbackQuery):
     text = format_product_card(product)
 
     # Получаем доступные размеры и цвета
-    sizes, colors = await get_product_variants(session, product.id)
+    sizes, colors = get_product_variants(product)
 
     # Добавляем информацию о вариантах
     if sizes:
@@ -87,63 +80,59 @@ async def callback_category(callback: CallbackQuery):
     )
     await callback.answer()
 
-def format_product_card(product: Product) -> str:
+def format_product_card(product: dict) -> str:
     """Форматирование карточки товара"""
-    price_text = f"{product.price:,} ₸"
+    price_text = f"{product['price']:,} ₸"
 
-    if product.discount_price and product.discount_price < product.price:
-        discount_percent = int((1 - product.discount_price / product.price) * 100)
-        price_text = f"💰 <s>{product.price:,} ₸</s> {product.discount_price:,} ₸ (-{discount_percent}%)"
-    else:
-        price_text = f"💰 {price_text}"
+    # MongoDB doesn't have discount_price field in our current schema
+    price_text = f"💰 {price_text}"
 
     rating_text = ""
-    if product.rating > 0:
-        stars = "⭐" * int(product.rating)
-        rating_text = f"⭐ {product.rating:.1f}/5 ({product.review_count} отзывов)"
+    if product.get('rating', 0) > 0:
+        stars = "⭐" * int(product['rating'])
+        rating_text = f"⭐ {product['rating']:.1f}/5 ({product.get('reviewCount', 0)} отзывов)"
 
     text = f"""
-<b>{product.name}</b>
+<b>{product['name']}</b>
 
 {rating_text}
 
 {price_text}
 
 📝 <b>Описание:</b>
-{product.description or 'Описание товара отсутствует'}
+{product.get('description', 'Описание товара отсутствует')}
 
 ⚡ <b>Характеристики:</b>
 """
 
-    if product.material:
-        text += f"• Материал: {product.material}\n"
-    if product.fit_type:
-        text += f"• Посадка: {product.fit_type}\n"
+    # Add material info if available
+    materials = product.get('materials', [])
+    if materials:
+        text += f"• Материалы: {', '.join(materials)}\n"
 
     text += "• Страна: Выполнено в Корее\n• Рекомендация: Брать на размер больше"
 
     return text.strip()
 
-async def get_product_variants(session, product_id: int) -> tuple[List[str], List[Dict[str, Any]]]:
-    """Получить доступные размеры и цвета товара"""
-    from models.database import ProductSize, ProductColor
+def get_product_variants(product: dict) -> tuple[List[str], List[Dict[str, Any]]]:
+    """Получить доступные размеры и цвета товара из MongoDB документа"""
 
     # Получаем размеры
-    sizes_result = await session.execute(
-        select(ProductSize.size).where(
-            ProductSize.product_id == product_id,
-            ProductSize.quantity > 0
-        )
-    )
-    sizes = [row[0] for row in sizes_result.fetchall()]
+    sizes = [
+        size['name'] for size in product.get('sizes', [])
+        if size.get('inStock', False)
+    ]
 
     # Получаем цвета
-    colors_result = await session.execute(
-        select(ProductColor.color_name, ProductColor.emoji).where(
-            ProductColor.product_id == product_id
-        )
-    )
-    colors = [{"name": row[0], "emoji": row[1]} for row in colors_result.fetchall()]
+    colors = [
+        {
+            "name": color['name'],
+            "hex": color.get('hexCode', '#000000'),
+            "emoji": color.get('name', '')  # Using name as emoji placeholder
+        }
+        for color in product.get('colors', [])
+        if color.get('inStock', False)
+    ]
 
     return sizes, colors
 
