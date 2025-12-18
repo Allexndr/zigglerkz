@@ -18,39 +18,111 @@ export async function POST(request: NextRequest) {
     const webhookUrl = `${baseUrl}/api/bot/webhook`
 
     if (action === 'set') {
-      // Имитируем установку webhook (в реальном приложении здесь был бы реальный запрос к Telegram API)
-      console.log('✅ Webhook simulation - would set webhook to:', webhookUrl)
-      console.log('✅ Bot token configured:', botToken.substring(0, 10) + '...')
+      // Настраиваем реальный webhook через Telegram Bot API
+      const telegramApiUrl = `https://api.telegram.org/bot${botToken}/setWebhook`
 
-      return NextResponse.json({
-        success: true,
-        message: 'Webhook configured successfully (simulation)',
-        webhook_url: webhookUrl,
-        note: 'This is a simulation. Real bot would connect to Telegram API.'
-      })
+      try {
+        const response = await fetch(telegramApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: webhookUrl,
+            drop_pending_updates: true,
+            allowed_updates: ['message', 'callback_query']
+          })
+        })
+
+        const result = await response.json()
+
+        if (result.ok) {
+          console.log('✅ Webhook set successfully:', webhookUrl)
+          return NextResponse.json({
+            success: true,
+            message: 'Webhook configured successfully',
+            webhook_url: webhookUrl,
+            telegram_response: result
+          })
+        } else {
+          console.error('❌ Failed to set webhook:', result)
+          return NextResponse.json(
+            {
+              error: 'Failed to set webhook',
+              telegram_error: result
+            },
+            { status: 500 }
+          )
+        }
+      } catch (fetchError) {
+        console.error('❌ Network error setting webhook:', fetchError)
+        return NextResponse.json(
+          {
+            error: 'Network error setting webhook',
+            details: fetchError instanceof Error ? fetchError.message : 'Unknown error'
+          },
+          { status: 500 }
+        )
+      }
 
     } else if (action === 'delete') {
-      // Имитируем удаление webhook
-      console.log('✅ Webhook simulation - would delete webhook')
+      // Удаляем webhook через Telegram Bot API
+      const telegramApiUrl = `https://api.telegram.org/bot${botToken}/deleteWebhook`
 
-      return NextResponse.json({
-        success: true,
-        message: 'Webhook deleted successfully (simulation)',
-        note: 'This is a simulation. Real bot would disconnect from Telegram API.'
-      })
+      try {
+        const response = await fetch(telegramApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        })
+
+        const result = await response.json()
+
+        if (result.ok) {
+          console.log('✅ Webhook deleted successfully')
+          return NextResponse.json({
+            success: true,
+            message: 'Webhook deleted successfully',
+            telegram_response: result
+          })
+        } else {
+          console.error('❌ Failed to delete webhook:', result)
+          return NextResponse.json(
+            { error: 'Failed to delete webhook', telegram_error: result },
+            { status: 500 }
+          )
+        }
+      } catch (fetchError) {
+        console.error('❌ Network error deleting webhook:', fetchError)
+        return NextResponse.json(
+          {
+            error: 'Network error deleting webhook',
+            details: fetchError instanceof Error ? fetchError.message : 'Unknown error'
+          },
+          { status: 500 }
+        )
+      }
 
     } else if (action === 'info') {
-      // Имитируем получение информации о webhook
-      return NextResponse.json({
-        ok: true,
-        result: {
-          url: webhookUrl,
-          has_custom_certificate: false,
-          pending_update_count: 0,
-          max_connections: 40,
-          ip_address: "simulated"
-        }
-      })
+      // Получаем информацию о webhook через Telegram Bot API
+      const telegramApiUrl = `https://api.telegram.org/bot${botToken}/getWebhookInfo`
+
+      try {
+        const response = await fetch(telegramApiUrl)
+        const result = await response.json()
+
+        return NextResponse.json(result)
+      } catch (fetchError) {
+        console.error('❌ Network error getting webhook info:', fetchError)
+        return NextResponse.json(
+          {
+            error: 'Network error getting webhook info',
+            details: fetchError instanceof Error ? fetchError.message : 'Unknown error'
+          },
+          { status: 500 }
+        )
+      }
     }
 
     return NextResponse.json(

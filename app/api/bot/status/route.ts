@@ -12,24 +12,42 @@ export async function GET() {
       }, { status: 500 })
     }
 
-    // Имитируем проверку статуса (в реальном приложении здесь были бы реальные запросы к Telegram API)
+    // Проверяем статус webhook через Telegram API
+    const webhookInfoUrl = `https://api.telegram.org/bot${botToken}/getWebhookInfo`
+    const botInfoUrl = `https://api.telegram.org/bot${botToken}/getMe`
+
+    let webhookInfo = null
+    let botInfo = null
+
+    try {
+      const [webhookResponse, botResponse] = await Promise.all([
+        fetch(webhookInfoUrl),
+        fetch(botInfoUrl)
+      ])
+
+      webhookInfo = await webhookResponse.json()
+      botInfo = await botResponse.json()
+    } catch (apiError) {
+      console.error('❌ Error checking Telegram API:', apiError)
+    }
+
     const botConfigured = !!botToken
     const dbConfigured = !!mongodbUri
 
     return NextResponse.json({
       status: 'success',
       timestamp: new Date().toISOString(),
-      simulation: true,
       bot: {
         configured: botConfigured,
         token_prefix: botToken.substring(0, 10) + '...',
-        webhook_simulation: true
+        info: botInfo?.ok ? botInfo.result : null,
+        webhook: webhookInfo?.ok ? webhookInfo.result : null,
+        webhook_active: webhookInfo?.ok && webhookInfo.result?.url ? true : false
       },
       database: {
         configured: dbConfigured,
         uri_prefix: dbConfigured ? mongodbUri!.substring(0, 20) + '...' : null
-      },
-      note: 'This is a webhook simulation. Real bot would check actual Telegram API status.'
+      }
     })
 
   } catch (error) {
