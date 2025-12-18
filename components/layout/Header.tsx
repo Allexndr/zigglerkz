@@ -33,16 +33,16 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/catalog" className="text-text-primary hover:text-accent transition-colors">
+            <Link href="/catalog" className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors">
               Каталог
             </Link>
-            <Link href="/collections" className="text-text-primary hover:text-accent transition-colors">
+            <Link href="/collections" className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors">
               Коллекции
             </Link>
-            <Link href="/about" className="text-text-primary hover:text-accent transition-colors">
+            <Link href="/about" className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors">
               О нас
             </Link>
-            <Link href="/blog" className="text-text-primary hover:text-accent transition-colors">
+            <Link href="/blog" className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors">
               Блог
             </Link>
           </nav>
@@ -81,24 +81,24 @@ export function Header() {
             </Button>
 
             {/* Favorites */}
-            <Link href="/favorites" className="relative p-2 hover:bg-surface rounded-md transition-colors">
-              <Heart size={20} className="text-text-secondary hover:text-accent" />
+            <Link href="/favorites" className="relative p-2 hover:bg-surface dark:hover:bg-dark-surface rounded-md transition-colors">
+              <Heart size={20} className="text-text-secondary dark:text-dark-text-secondary hover:text-accent" />
               <Badge variant="accent" className="absolute -top-1 -right-1 text-xs">
                 0
               </Badge>
             </Link>
 
             {/* Cart */}
-            <Link href="/cart" className="relative p-2 hover:bg-surface rounded-md transition-colors">
-              <ShoppingCart size={20} className="text-text-secondary hover:text-accent" />
+            <Link href="/cart" className="relative p-2 hover:bg-surface dark:hover:bg-dark-surface rounded-md transition-colors">
+              <ShoppingCart size={20} className="text-text-secondary dark:text-dark-text-secondary hover:text-accent" />
               <Badge variant="accent" className="absolute -top-1 -right-1 text-xs">
                 0
               </Badge>
             </Link>
 
             {/* User Account */}
-            <Link href="/account" className="p-2 hover:bg-surface rounded-md transition-colors">
-              <User size={20} className="text-text-secondary hover:text-accent" />
+            <Link href="/account" className="p-2 hover:bg-surface dark:hover:bg-dark-surface rounded-md transition-colors">
+              <User size={20} className="text-text-secondary dark:text-dark-text-secondary hover:text-accent" />
             </Link>
 
             {/* Mobile Menu Button */}
@@ -119,28 +119,28 @@ export function Header() {
             <nav className="flex flex-col space-y-4">
               <Link
                 href="/catalog"
-                className="text-text-primary hover:text-accent transition-colors py-2"
+                className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Каталог
               </Link>
               <Link
                 href="/collections"
-                className="text-text-primary hover:text-accent transition-colors py-2"
+                className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Коллекции
               </Link>
               <Link
                 href="/about"
-                className="text-text-primary hover:text-accent transition-colors py-2"
+                className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 О нас
               </Link>
               <Link
                 href="/blog"
-                className="text-text-primary hover:text-accent transition-colors py-2"
+                className="text-text-primary dark:text-dark-text-primary hover:text-accent transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Блог

@@ -19,7 +19,7 @@ const products = [
     discount: 16,
     rating: 4.8,
     reviewCount: 24,
-    image: 'https://i.imgur.com/wV8NzXp.jpg',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop',
     category: 'classic',
     material: 'Шерсть 100%',
     color: 'Темно-синий',
@@ -34,7 +34,7 @@ const products = [
     price: 125000,
     rating: 4.6,
     reviewCount: 18,
-    image: 'https://i.imgur.com/R8Q7NxZ.jpg',
+    image: 'https://images.unsplash.com/photo-1555069519-127aadedf1f3?w=600&h=800&fit=crop',
     category: 'slim',
     material: 'Шерсть + эластан',
     color: 'Черный',
@@ -48,7 +48,7 @@ const products = [
     price: 95000,
     rating: 4.4,
     reviewCount: 12,
-    image: 'https://i.imgur.com/T6P8NxW.jpg',
+    image: 'https://images.unsplash.com/photo-1560243563-062bfc001d68?w=600&h=800&fit=crop',
     category: 'casual',
     material: 'Хлопок + шерсть',
     color: 'Серый',
@@ -62,7 +62,7 @@ const products = [
     price: 280000,
     rating: 4.9,
     reviewCount: 8,
-    image: 'https://i.imgur.com/Y3Q9NxV.jpg',
+    image: 'https://images.unsplash.com/photo-1506629905607-997823df6e2e?w=600&h=800&fit=crop',
     category: 'festive',
     material: 'Шерсть Super 150s',
     color: 'Черный',
@@ -79,7 +79,7 @@ const products = [
     discount: 15,
     rating: 4.7,
     reviewCount: 15,
-    image: 'https://i.imgur.com/9nP4QxR.jpg',
+    image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=600&h=800&fit=crop',
     category: 'classic',
     material: 'Шерсть Super 120s',
     color: 'Синий',
@@ -93,7 +93,7 @@ const products = [
     price: 165000,
     rating: 4.5,
     reviewCount: 9,
-    image: 'https://i.imgur.com/4wXp8Kz.jpg',
+    image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&h=800&fit=crop',
     category: 'casual',
     material: 'Кашемир + шерсть',
     color: 'Бежевый',
@@ -271,8 +271,8 @@ export default function CatalogPage() {
           {/* Filters Sidebar */}
           <aside className={`w-full lg:w-64 space-y-6 ${showFilters ? 'block' : 'hidden lg:block'}`}>
             {/* Categories */}
-            <div className="bg-surface p-6 rounded-lg">
-              <h3 className="font-semibold text-text-primary mb-4">Категории</h3>
+            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+              <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Категории</h3>
               <div className="space-y-2">
                 {categories.map(category => (
                   <button
@@ -281,12 +281,12 @@ export default function CatalogPage() {
                     className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
                       selectedCategory === category.id
                         ? 'bg-accent text-primary'
-                        : 'hover:bg-surface/50 text-text-primary'
+                        : 'hover:bg-surface/50 dark:hover:bg-dark-surface/50 text-text-primary dark:text-dark-text-primary'
                     }`}
                   >
                     <div className="flex justify-between">
                       <span>{category.name}</span>
-                      <span className="text-text-secondary">({category.count})</span>
+                      <span className="text-text-secondary dark:text-dark-text-secondary">({category.count})</span>
                     </div>
                   </button>
                 ))}
@@ -294,8 +294,8 @@ export default function CatalogPage() {
             </div>
 
             {/* Price Range */}
-            <div className="bg-surface p-6 rounded-lg">
-              <h3 className="font-semibold text-text-primary mb-4">Цена</h3>
+            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+              <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Цена</h3>
               <div className="space-y-2">
                 {priceRanges.map(range => (
                   <button
@@ -306,7 +306,7 @@ export default function CatalogPage() {
                     className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
                       selectedPriceRange?.min === range.min
                         ? 'bg-accent text-primary'
-                        : 'hover:bg-surface/50 text-text-primary'
+                        : 'hover:bg-surface/50 dark:hover:bg-dark-surface/50 text-text-primary dark:text-dark-text-primary'
                     }`}
                   >
                     {range.label}
@@ -316,8 +316,8 @@ export default function CatalogPage() {
             </div>
 
             {/* Size */}
-            <div className="bg-surface p-6 rounded-lg">
-              <h3 className="font-semibold text-text-primary mb-4">Размер</h3>
+            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+              <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Размер</h3>
               <div className="grid grid-cols-3 gap-2">
                 {sizes.map(size => (
                   <button
@@ -326,7 +326,7 @@ export default function CatalogPage() {
                     className={`px-3 py-2 text-sm rounded-md transition-colors ${
                       selectedSizes.includes(size)
                         ? 'bg-accent text-primary'
-                        : 'bg-background text-text-primary hover:bg-surface/50'
+                        : 'bg-background dark:bg-dark-background text-text-primary dark:text-dark-text-primary hover:bg-surface/50 dark:hover:bg-dark-surface/50'
                     }`}
                   >
                     {size}
@@ -336,8 +336,8 @@ export default function CatalogPage() {
             </div>
 
             {/* Color */}
-            <div className="bg-surface p-6 rounded-lg">
-              <h3 className="font-semibold text-text-primary mb-4">Цвет</h3>
+            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+              <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Цвет</h3>
               <div className="grid grid-cols-2 gap-2">
                 {colors.map(color => (
                   <button
@@ -346,7 +346,7 @@ export default function CatalogPage() {
                     className={`px-3 py-2 text-sm rounded-md transition-colors ${
                       selectedColors.includes(color)
                         ? 'bg-accent text-primary'
-                        : 'bg-background text-text-primary hover:bg-surface/50'
+                        : 'bg-background dark:bg-dark-background text-text-primary dark:text-dark-text-primary hover:bg-surface/50 dark:hover:bg-dark-surface/50'
                     }`}
                   >
                     {color}
@@ -357,8 +357,8 @@ export default function CatalogPage() {
 
             {/* Clear Filters */}
             {(selectedSizes.length > 0 || selectedColors.length > 0 || selectedPriceRange) && (
-              <div className="bg-surface p-6 rounded-lg">
-                <Button onClick={clearFilters} variant="ghost" className="w-full">
+              <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+                <Button onClick={clearFilters} variant="ghost" className="w-full text-text-primary dark:text-dark-text-primary">
                   Очистить фильтры
                 </Button>
               </div>
@@ -424,9 +424,9 @@ export default function CatalogPage() {
                         </div>
                       </div>
 
-                      <div className="p-4">
-                        <div className="text-xs text-text-secondary mb-1">{product.brand}</div>
-                        <h3 className="font-medium text-text-primary mb-2 line-clamp-2 group-hover:text-accent transition-colors">
+                      <div className="p-4 bg-surface dark:bg-dark-surface">
+                        <div className="text-xs text-text-secondary dark:text-dark-text-secondary mb-1">{product.brand}</div>
+                        <h3 className="font-medium text-text-primary dark:text-dark-text-primary mb-2 line-clamp-2 group-hover:text-accent transition-colors">
                           {product.name}
                         </h3>
                         <div className="flex items-center gap-2 mb-2">
@@ -434,12 +434,12 @@ export default function CatalogPage() {
                             {product.price.toLocaleString()} ₸
                           </span>
                           {product.originalPrice && (
-                            <span className="text-sm text-text-secondary line-through">
+                            <span className="text-sm text-text-secondary dark:text-dark-text-secondary line-through">
                               {product.originalPrice.toLocaleString()} ₸
                             </span>
                           )}
                         </div>
-                        <div className="text-xs text-text-secondary space-y-1">
+                        <div className="text-xs text-text-secondary dark:text-dark-text-secondary space-y-1">
                           <div>Размер: {product.size}</div>
                           <div>Цвет: {product.color}</div>
                           <div>Материал: {product.material}</div>

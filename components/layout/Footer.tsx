@@ -44,16 +44,16 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="font-semibold text-text-primary dark:text-dark-text-primary text-lg">Каталог</h4>
             <div className="space-y-3">
-              <Link href="/catalog?category=classic" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/catalog?category=classic" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Классические костюмы
               </Link>
-              <Link href="/catalog?category=slim" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/catalog?category=slim" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Slim Fit
               </Link>
-              <Link href="/catalog?category=casual" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/catalog?category=casual" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Casual
               </Link>
-              <Link href="/catalog?category=festive" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/catalog?category=festive" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Праздничные
               </Link>
             </div>
@@ -63,16 +63,16 @@ export function Footer() {
           <div className="space-y-6">
             <h4 className="font-semibold text-text-primary dark:text-dark-text-primary text-lg">Поддержка</h4>
             <div className="space-y-3">
-              <Link href="/help/delivery" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/help/delivery" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Доставка и оплата
               </Link>
-              <Link href="/help/returns" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/help/returns" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Возврат и обмен
               </Link>
-              <Link href="/help/sizing" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/help/sizing" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Таблица размеров
               </Link>
-              <Link href="/help/care" className="block text-text-secondary hover:text-accent transition-colors">
+              <Link href="/help/care" className="block text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Уход за костюмами
               </Link>
             </div>
@@ -125,13 +125,13 @@ export function Footer() {
             </div>
 
             <div className="flex flex-wrap items-center space-x-6 text-sm">
-              <Link href="/privacy" className="text-text-secondary hover:text-accent transition-colors">
+              <Link href="/privacy" className="text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Политика конфиденциальности
               </Link>
-              <Link href="/terms" className="text-text-secondary hover:text-accent transition-colors">
+              <Link href="/terms" className="text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Условия использования
               </Link>
-              <Link href="/cookies" className="text-text-secondary hover:text-accent transition-colors">
+              <Link href="/cookies" className="text-text-secondary dark:text-dark-text-secondary hover:text-accent transition-colors">
                 Cookies
               </Link>
             </div>
