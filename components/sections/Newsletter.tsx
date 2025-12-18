@@ -43,15 +43,15 @@ export function Newsletter() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Instagram Subscription */}
-            <div className="card bg-background text-text-primary p-8 text-center">
+            <div className="card bg-gradient-to-br from-yellow-400/20 via-amber-500/20 to-orange-500/20 dark:from-yellow-400/30 dark:via-amber-500/30 dark:to-orange-500/30 backdrop-blur-sm border-yellow-400/50 dark:border-yellow-400/70 p-8 text-center">
               <div className="flex items-center justify-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Instagram className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold">@ziggler_kz</h3>
+                <h3 className="text-2xl font-bold text-yellow-600 dark:text-yellow-400 drop-shadow-sm">@ziggler_kz</h3>
               </div>
 
-              <p className="text-text-secondary dark:text-dark-text-secondary mb-6">
+              <p className="text-yellow-700 dark:text-yellow-200 mb-6 font-medium">
                 Более 10,000 подписчиков уже следят за нашими обновлениями
               </p>
 
@@ -59,7 +59,7 @@ export function Newsletter() {
                 href="https://instagram.com/ziggler_kz"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg transition-all duration-200 border-0"
+                className="inline-flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white font-semibold rounded-lg transition-all duration-300 border-0 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <Instagram className="w-5 h-5" />
                 <span>Подписаться в Instagram</span>
