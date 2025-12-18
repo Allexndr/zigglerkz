@@ -178,12 +178,12 @@ export function PersonalizationQuiz() {
               {question.question}
             </h3>
 
-            <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="grid grid-cols-1 gap-4 sm:gap-4 mb-4 sm:mb-6">
               {question.options.map((option) => (
                 <button
                   key={option.value}
                   onClick={() => handleAnswer(question.id, option.value)}
-                  className="mobile-button sm:p-4 border border-border dark:border-dark-border rounded-lg hover:border-accent hover:bg-accent/5 dark:hover:bg-accent/5 transition-all duration-200 text-left touch-target"
+                  className="mobile-button sm:p-4 px-6 py-5 sm:px-4 border border-border dark:border-dark-border rounded-lg hover:border-accent hover:bg-accent/5 dark:hover:bg-accent/5 transition-all duration-200 text-left touch-target"
                 >
                   <div className="flex items-center space-x-3">
                     <span className="text-xl sm:text-2xl">{option.emoji}</span>
