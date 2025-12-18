@@ -1,9 +1,11 @@
 {
   "version": 2,
   "name": "ziggler-kz",
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 10
     }
-  },
+  }
 }
