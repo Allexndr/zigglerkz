@@ -35,3 +35,38 @@
     background-color: rgba(212, 175, 55, 0.8);
   }
 }
+
+@layer components {
+  /* Container padding for better text centering */
+  .container-padding {
+    @apply px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 max-w-7xl mx-auto;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply bg-accent text-primary px-6 py-3 rounded-md font-medium;
+    @apply hover:bg-accent/90 transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50;
+    @apply dark:bg-accent dark:text-dark-primary;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-text-primary px-6 py-3 rounded-md font-medium border border-border;
+    @apply hover:bg-surface/80 transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50;
+    @apply dark:bg-dark-surface dark:text-dark-text-primary dark:border-dark-border;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-surface rounded-lg border border-border p-6;
+    @apply dark:bg-dark-surface dark:border-dark-border;
+  }
+
+  /* Form styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-md border border-border bg-background text-text-primary;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent;
+    @apply dark:bg-dark-surface dark:border-dark-border dark:text-dark-text-primary;
+  }
+}
