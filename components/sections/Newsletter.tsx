@@ -1,60 +1,29 @@
 'use client'
 
-import { useState } from 'react'
-import { Mail, CheckCircle, Gift, TrendingUp, Users, Sparkles } from 'lucide-react'
+import { Instagram, Heart, Users, Sparkles, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
-import { Input } from '@/components/ui/Input'
-import { toast } from '@/components/ui/Toaster'
 
 export function Newsletter() {
-  const [email, setEmail] = useState('')
-  const [isSubscribed, setIsSubscribed] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!email || !email.includes('@')) {
-      toast.error('Ошибка', 'Пожалуйста, введите корректный email')
-      return
-    }
-
-    setIsLoading(true)
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    setIsSubscribed(true)
-    setIsLoading(false)
-    toast.success('Успешно!', 'Вы подписались на рассылку новостей')
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setIsSubscribed(false)
-      setEmail('')
-    }, 3000)
-  }
-
   const benefits = [
     {
-      icon: Gift,
-      title: 'Эксклюзивные скидки',
-      description: 'Первыми узнавайте о распродажах и специальных предложениях',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Новые коллекции',
-      description: 'Будьте в курсе выхода новых моделей и коллекций',
+      icon: Heart,
+      title: 'Эксклюзивный контент',
+      description: 'Фотографии с показов, backstage и стильные образы',
     },
     {
       icon: Users,
-      title: 'Стильные советы',
-      description: 'Получайте рекомендации по сочетанию костюмов и аксессуаров',
+      title: 'Сообщество стиля',
+      description: 'Присоединяйтесь к сообществу ценителей классического стиля',
     },
     {
       icon: Sparkles,
-      title: 'Персональные предложения',
-      description: 'Специальные предложения на основе ваших предпочтений',
+      title: 'Стильные советы',
+      description: 'Ежедневные советы по стилю и моде',
+    },
+    {
+      icon: Instagram,
+      title: 'Анонсы акций',
+      description: 'Первыми узнавайте о новых коллекциях и скидках',
     },
   ]
 
@@ -64,61 +33,38 @@ export function Newsletter() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Будьте в курсе новинок
+              Следите за нами в Instagram
             </h2>
             <p className="text-lg opacity-90 mb-8">
-              Подпишитесь на нашу рассылку и получайте эксклюзивные предложения,
-              информацию о новых коллекциях и стильные советы
+              Присоединяйтесь к нашему сообществу и будьте в курсе последних новинок,
+              эксклюзивного контента и стильных образов
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Subscription Form */}
-            <div className="card bg-background text-text-primary p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-accent" />
+            {/* Instagram Subscription */}
+            <div className="card bg-background text-text-primary p-8 text-center">
+              <div className="flex items-center justify-center space-x-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                  <Instagram className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold">Подписка на новости</h3>
+                <h3 className="text-2xl font-semibold">@ziggler_kz</h3>
               </div>
 
-              {isSubscribed ? (
-                <div className="text-center py-8">
-                  <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-lg font-semibold mb-2">Спасибо за подписку!</h4>
-                  <p className="text-text-secondary dark:text-dark-text-secondary">
-                    Теперь вы будете первыми узнавать о наших новинках и акциях.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Ваш email адрес"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full"
-                      required
-                    />
-                  </div>
+              <p className="text-text-secondary dark:text-dark-text-secondary mb-6">
+                Более 10,000 подписчиков уже следят за нашими обновлениями
+              </p>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-accent text-primary hover:bg-accent/90"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? 'Подписка...' : 'Подписаться на новости'}
-                  </Button>
-
-                  <p className="text-xs text-text-secondary dark:text-dark-text-secondary text-center">
-                    Нажимая "Подписаться", вы соглашаетесь с{' '}
-                    <a href="/privacy" className="underline hover:text-accent">
-                      политикой конфиденциальности
-                    </a>
-                  </p>
-                </form>
-              )}
+              <a
+                href="https://instagram.com/ziggler_kz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg transition-all duration-200 border-0"
+              >
+                <Instagram className="w-5 h-5" />
+                <span>Подписаться в Instagram</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
 
             {/* Benefits */}
@@ -146,16 +92,16 @@ export function Newsletter() {
               <div className="bg-primary/10 rounded-lg p-6 mt-8">
                 <div className="grid grid-cols-3 gap-4 text-center">
                   <div>
-                    <div className="text-2xl font-bold mb-1">5000+</div>
+                    <div className="text-2xl font-bold mb-1">10k+</div>
                     <div className="text-sm opacity-80">Подписчиков</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold mb-1">95%</div>
-                    <div className="text-sm opacity-80">Открываемость</div>
+                    <div className="text-2xl font-bold mb-1">85%</div>
+                    <div className="text-sm opacity-80">Вовлеченность</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold mb-1">2x</div>
-                    <div className="text-sm opacity-80">Конверсия</div>
+                    <div className="text-2xl font-bold mb-1">50+</div>
+                    <div className="text-sm opacity-80">Постов в месяц</div>
                   </div>
                 </div>
               </div>
