@@ -1,0 +1,11 @@
+# MongoDB Atlas Connection
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/ziggler
+
+# Telegram Bot Token
+TELEGRAM_BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
+
+# Next.js Base URL (для webhook)
+NEXT_PUBLIC_BASE_URL=https://zigglerkz.vercel.app
+
+# Node Environment
+NODE_ENV=production

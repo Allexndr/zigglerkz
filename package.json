@@ -13,7 +13,10 @@
     "test:coverage": "jest --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "bot:setup-webhook": "curl -X POST http://localhost:3000/api/bot/setup-webhook -H 'Content-Type: application/json' -d '{\"action\":\"set\"}'",
+    "bot:delete-webhook": "curl -X POST http://localhost:3000/api/bot/setup-webhook -H 'Content-Type: application/json' -d '{\"action\":\"delete\"}'",
+    "bot:status": "curl http://localhost:3000/api/bot/status"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.0",

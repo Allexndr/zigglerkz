@@ -36,7 +36,7 @@ python3 -c "import aiogram; print('✅ aiogram установлен')" 2>/dev/nu
 cd ..
 
 echo ""
-echo "🚀 Запуск сайта и бота..."
+echo "🚀 Запуск сайта..."
 echo "=============================="
 
 # Запуск сайта в фоне
@@ -44,22 +44,43 @@ npm run dev &
 SITE_PID=$!
 
 # Ожидание запуска сайта
-sleep 3
+sleep 5
 
-# Переход в директорию бота и запуск
-cd telegram_bot
-python3 run.py &
-BOT_PID=$!
+echo "🤖 Настройка Telegram бота..."
+echo "=============================="
+
+# Настройка webhook для бота
+echo "🔗 Настройка webhook..."
+WEBHOOK_SETUP=$(curl -s -X POST http://localhost:3000/api/bot/setup-webhook \
+  -H 'Content-Type: application/json' \
+  -d '{"action":"set"}')
+
+if echo "$WEBHOOK_SETUP" | grep -q '"success":true'; then
+  echo "✅ Webhook настроен успешно"
+else
+  echo "❌ Ошибка настройки webhook:"
+  echo "$WEBHOOK_SETUP"
+fi
+
+# Проверка статуса бота
+echo ""
+echo "📊 Проверка статуса бота..."
+BOT_STATUS=$(curl -s http://localhost:3000/api/bot/status)
+if echo "$BOT_STATUS" | grep -q '"status":"success"'; then
+  echo "✅ Бот активен и готов к работе"
+else
+  echo "❌ Проблемы с ботом:"
+  echo "$BOT_STATUS"
+fi
 
 echo ""
 echo "🎉 Проект успешно запущен!"
 echo "=============================="
 echo "🌐 Сайт: http://localhost:3000"
-echo "🤖 Бот: Запущен и работает"
+echo "🤖 Бот: Работает через webhook API"
 echo ""
 echo "📋 PID процессов:"
 echo "   Сайт: $SITE_PID"
-echo "   Бот: $BOT_PID"
 echo ""
 echo "🛑 Для остановки нажмите Ctrl+C"
 
@@ -67,8 +88,14 @@ echo "🛑 Для остановки нажмите Ctrl+C"
 cleanup() {
     echo ""
     echo "🧹 Остановка процессов..."
+
+    # Удаляем webhook перед остановкой
+    echo "🔗 Удаление webhook..."
+    curl -s -X POST http://localhost:3000/api/bot/setup-webhook \
+      -H 'Content-Type: application/json' \
+      -d '{"action":"delete"}' > /dev/null
+
     kill $SITE_PID 2>/dev/null
-    kill $BOT_PID 2>/dev/null
     echo "👋 Проект остановлен"
     exit 0
 }
