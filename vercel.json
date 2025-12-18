@@ -6,8 +6,4 @@
       "maxDuration": 10
     }
   },
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "TELEGRAM_BOT_TOKEN": "@telegram_bot_token"
-  }
 }
