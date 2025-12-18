@@ -18,7 +18,7 @@ const config: Config = {
           primary: '#111827', // Almost Black
           secondary: '#6B7280', // Gray
         },
-        border: '#E5E7EB' // Light Border
+        border: '#E5E7EB', // Light Border
 
         // Dark theme colors
         dark: {

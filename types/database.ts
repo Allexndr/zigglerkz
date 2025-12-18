@@ -10,6 +10,7 @@ export interface BaseDocument {
 // User types
 export interface User extends BaseDocument {
   telegramId?: number
+  username?: string
   email?: string
   fullName?: string
   phone?: string

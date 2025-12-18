@@ -101,9 +101,9 @@ export class UserService {
     await db.collection('users').updateOne(
       { _id: new ObjectId(userId) },
       {
-        $push: { addresses: addressWithId },
+        $push: { addresses: addressWithId } as any,
         $set: { updatedAt: new Date() }
-      }
+      } as any
     )
   }
 
@@ -142,9 +142,9 @@ export class UserService {
     await db.collection('users').updateOne(
       { _id: new ObjectId(userId) },
       {
-        $pull: { addresses: { id: addressId } },
+        $pull: { addresses: { id: addressId } } as any,
         $set: { updatedAt: new Date() }
-      }
+      } as any
     )
   }
 

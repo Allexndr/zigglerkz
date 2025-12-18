@@ -86,7 +86,7 @@ async function seedDatabase() {
   console.log(`📂 Создано ${categories.length} категорий`)
 
   // Create products
-  const products: Omit<Product, '_id'>[] = [
+  const products: Omit<Product, '_id' | 'createdAt' | 'updatedAt'>[] = [
     {
       name: 'Классический костюм Hugo Boss',
       description: 'Элегантный костюм из шерсти высшего качества. Идеален для деловых встреч и официальных мероприятий.',

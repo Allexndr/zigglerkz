@@ -147,7 +147,9 @@ export class ProductService {
       userId: userId ? new ObjectId(userId) : undefined,
       sessionId: sessionId || 'anonymous',
       viewedAt: new Date(),
-      source: source as any
+      source: source as any,
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
 
     await db.collection('productViews').insertOne(view)

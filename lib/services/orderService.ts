@@ -14,8 +14,8 @@ export class OrderService {
     cartId: string,
     customerInfo: CustomerInfo,
     shippingAddress: Address,
-    billingAddress?: Address,
     paymentMethod: PaymentMethod,
+    billingAddress?: Address,
     notes?: string
   ): Promise<Order> {
     const { db } = await connectToDatabase()
@@ -34,7 +34,7 @@ export class OrderService {
     const total = subtotal + shippingCost + tax - discount
 
     // Create order items
-    const orderItems: OrderItem[] = cart.items.map(cartItem => ({
+    const orderItems: OrderItem[] = cart.items.map((cartItem: any) => ({
       productId: cartItem.productId,
       product: cartItem.product,
       size: cartItem.size,
