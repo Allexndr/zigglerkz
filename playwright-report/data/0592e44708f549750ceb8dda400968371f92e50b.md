@@ -1,0 +1,98 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Ziggler" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e7]:
+          - button [ref=e8] [cursor=pointer]:
+            - img [ref=e9]
+          - link "0" [ref=e11] [cursor=pointer]:
+            - /url: /favorites
+            - img [ref=e12]
+            - generic [ref=e14]: "0"
+          - link "0" [ref=e15] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e16]
+            - generic [ref=e20]: "0"
+          - link [ref=e21] [cursor=pointer]:
+            - /url: /account
+            - img [ref=e22]
+          - button [ref=e25] [cursor=pointer]:
+            - img [ref=e26]
+    - main [ref=e27]:
+      - generic [ref=e29]:
+        - heading "404" [level=1] [ref=e30]
+        - heading "This page could not be found." [level=2] [ref=e32]
+    - contentinfo [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]:
+            - heading "Ziggler" [level=3] [ref=e37]
+            - paragraph [ref=e38]: Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
+            - generic [ref=e39]:
+              - link [ref=e40] [cursor=pointer]:
+                - /url: https://instagram.com/ziggler_kz
+                - img [ref=e41]
+              - link [ref=e44] [cursor=pointer]:
+                - /url: https://facebook.com/ziggler_kz
+                - img [ref=e45]
+              - link [ref=e47] [cursor=pointer]:
+                - /url: https://t.me/ziggler_kz
+                - img [ref=e48]
+          - generic [ref=e50]:
+            - heading "Каталог" [level=4] [ref=e51]
+            - generic [ref=e52]:
+              - link "Классические костюмы" [ref=e53] [cursor=pointer]:
+                - /url: /catalog?category=classic
+              - link "Slim Fit" [ref=e54] [cursor=pointer]:
+                - /url: /catalog?category=slim
+              - link "Casual" [ref=e55] [cursor=pointer]:
+                - /url: /catalog?category=casual
+              - link "Праздничные" [ref=e56] [cursor=pointer]:
+                - /url: /catalog?category=festive
+          - generic [ref=e57]:
+            - heading "Поддержка" [level=4] [ref=e58]
+            - generic [ref=e59]:
+              - link "Доставка и оплата" [ref=e60] [cursor=pointer]:
+                - /url: /help/delivery
+              - link "Возврат и обмен" [ref=e61] [cursor=pointer]:
+                - /url: /help/returns
+              - link "Таблица размеров" [ref=e62] [cursor=pointer]:
+                - /url: /help/sizing
+              - link "Уход за костюмами" [ref=e63] [cursor=pointer]:
+                - /url: /help/care
+          - generic [ref=e64]:
+            - heading "Контакты" [level=4] [ref=e65]
+            - generic [ref=e66]:
+              - generic [ref=e67]:
+                - img [ref=e68]
+                - generic [ref=e71]:
+                  - paragraph [ref=e72]: г. Алматы, ул. Центральная, 123
+                  - paragraph [ref=e73]: БЦ "Premium Plaza", 5 этаж
+              - generic [ref=e74]:
+                - img [ref=e75]
+                - link "+7 (727) 123-45-67" [ref=e77] [cursor=pointer]:
+                  - /url: tel:+77271234567
+              - generic [ref=e78]:
+                - img [ref=e79]
+                - link "info@ziggler.kz" [ref=e82] [cursor=pointer]:
+                  - /url: mailto:info@ziggler.kz
+        - generic [ref=e84]:
+          - generic [ref=e85]: © 2025 Ziggler.kz. Все права защищены.
+          - generic [ref=e86]:
+            - link "Политика конфиденциальности" [ref=e87] [cursor=pointer]:
+              - /url: /privacy
+            - link "Условия использования" [ref=e88] [cursor=pointer]:
+              - /url: /terms
+            - link "Cookies" [ref=e89] [cursor=pointer]:
+              - /url: /cookies
+  - generic [ref=e90]:
+    - img [ref=e92]
+    - button "Open Tanstack query devtools" [ref=e140] [cursor=pointer]:
+      - img [ref=e141]
+  - alert [ref=e189]
+```

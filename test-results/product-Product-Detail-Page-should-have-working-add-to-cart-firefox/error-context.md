@@ -1,0 +1,109 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Ziggler" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e7]:
+          - link "Каталог" [ref=e8] [cursor=pointer]:
+            - /url: /catalog
+          - link "Коллекции" [ref=e9] [cursor=pointer]:
+            - /url: /collections
+          - link "О нас" [ref=e10] [cursor=pointer]:
+            - /url: /about
+          - link "Блог" [ref=e11] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=e14]:
+          - textbox "Поиск костюмов..." [ref=e15]
+          - button [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+        - generic [ref=e20]:
+          - button [ref=e21] [cursor=pointer]:
+            - img [ref=e22]
+          - link "0" [ref=e24] [cursor=pointer]:
+            - /url: /favorites
+            - img [ref=e25]
+            - generic [ref=e27]: "0"
+          - link "0" [ref=e28] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e29]
+            - generic [ref=e33]: "0"
+          - link [ref=e34] [cursor=pointer]:
+            - /url: /account
+            - img [ref=e35]
+    - main [ref=e38]:
+      - generic [ref=e40]:
+        - heading "404" [level=1] [ref=e41]
+        - heading "This page could not be found." [level=2] [ref=e43]
+    - contentinfo [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - heading "Ziggler" [level=3] [ref=e48]
+            - paragraph [ref=e49]: Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
+            - generic [ref=e50]:
+              - link [ref=e51] [cursor=pointer]:
+                - /url: https://instagram.com/ziggler_kz
+                - img [ref=e52]
+              - link [ref=e56] [cursor=pointer]:
+                - /url: https://facebook.com/ziggler_kz
+                - img [ref=e57]
+              - link [ref=e59] [cursor=pointer]:
+                - /url: https://t.me/ziggler_kz
+                - img [ref=e60]
+          - generic [ref=e62]:
+            - heading "Каталог" [level=4] [ref=e63]
+            - generic [ref=e64]:
+              - link "Классические костюмы" [ref=e65] [cursor=pointer]:
+                - /url: /catalog?category=classic
+              - link "Slim Fit" [ref=e66] [cursor=pointer]:
+                - /url: /catalog?category=slim
+              - link "Casual" [ref=e67] [cursor=pointer]:
+                - /url: /catalog?category=casual
+              - link "Праздничные" [ref=e68] [cursor=pointer]:
+                - /url: /catalog?category=festive
+          - generic [ref=e69]:
+            - heading "Поддержка" [level=4] [ref=e70]
+            - generic [ref=e71]:
+              - link "Доставка и оплата" [ref=e72] [cursor=pointer]:
+                - /url: /help/delivery
+              - link "Возврат и обмен" [ref=e73] [cursor=pointer]:
+                - /url: /help/returns
+              - link "Таблица размеров" [ref=e74] [cursor=pointer]:
+                - /url: /help/sizing
+              - link "Уход за костюмами" [ref=e75] [cursor=pointer]:
+                - /url: /help/care
+          - generic [ref=e76]:
+            - heading "Контакты" [level=4] [ref=e77]
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - img [ref=e80]
+                - generic [ref=e83]:
+                  - paragraph [ref=e84]: г. Алматы, ул. Центральная, 123
+                  - paragraph [ref=e85]: БЦ "Premium Plaza", 5 этаж
+              - generic [ref=e86]:
+                - img [ref=e87]
+                - link "+7 (727) 123-45-67" [ref=e89] [cursor=pointer]:
+                  - /url: tel:+77271234567
+              - generic [ref=e90]:
+                - img [ref=e91]
+                - link "info@ziggler.kz" [ref=e94] [cursor=pointer]:
+                  - /url: mailto:info@ziggler.kz
+        - generic [ref=e96]:
+          - generic [ref=e97]: © 2025 Ziggler.kz. Все права защищены.
+          - generic [ref=e98]:
+            - link "Политика конфиденциальности" [ref=e99] [cursor=pointer]:
+              - /url: /privacy
+            - link "Условия использования" [ref=e100] [cursor=pointer]:
+              - /url: /terms
+            - link "Cookies" [ref=e101] [cursor=pointer]:
+              - /url: /cookies
+  - generic [ref=e102]:
+    - img [ref=e104]
+    - button "Open Tanstack query devtools" [ref=e153] [cursor=pointer]:
+      - img [ref=e154]
+  - alert [ref=e203]
+```

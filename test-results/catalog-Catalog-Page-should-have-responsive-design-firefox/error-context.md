@@ -1,0 +1,268 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Ziggler" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e7]:
+          - button [ref=e8] [cursor=pointer]:
+            - img [ref=e9]
+          - link "0" [ref=e11] [cursor=pointer]:
+            - /url: /favorites
+            - img [ref=e12]
+            - generic [ref=e14]: "0"
+          - link "0" [ref=e15] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e16]
+            - generic [ref=e20]: "0"
+          - link [ref=e21] [cursor=pointer]:
+            - /url: /account
+            - img [ref=e22]
+          - button [ref=e25] [cursor=pointer]:
+            - img [ref=e26]
+    - main [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e34]:
+          - navigation [ref=e35]:
+            - link "Главная" [ref=e36] [cursor=pointer]:
+              - /url: /
+            - text: /Каталог
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - heading "Каталог костюмов" [level=1] [ref=e39]
+              - paragraph [ref=e40]: 6 товаров
+            - generic [ref=e41]:
+              - generic [ref=e42]:
+                - button [ref=e43] [cursor=pointer]:
+                  - img [ref=e44]
+                - button [ref=e50] [cursor=pointer]:
+                  - img [ref=e51]
+              - combobox [ref=e58]:
+                - option "По популярности" [selected]
+                - option "Сначала дешевые"
+                - option "Сначала дорогие"
+                - option "По рейтингу"
+                - option "Сначала новые"
+              - button "Фильтры" [ref=e59] [cursor=pointer]:
+                - img [ref=e60]
+                - text: Фильтры
+        - main [ref=e72]:
+          - generic [ref=e73]:
+            - 'link "Свадебный костюм Brioni Новинка 4.9 (8) Brioni Свадебный костюм Brioni 280,000 ₸ Размер: 48L Цвет: Черный Материал: Шерсть Super 150s" [ref=e74] [cursor=pointer]':
+              - /url: /product/4
+              - generic [ref=e75]:
+                - generic [ref=e76]:
+                  - img "Свадебный костюм Brioni" [ref=e77]
+                  - generic [ref=e78]: Новинка
+                  - generic [ref=e81]:
+                    - generic [ref=e82]:
+                      - img [ref=e83]
+                      - generic [ref=e85]: "4.9"
+                      - generic [ref=e86]: (8)
+                    - generic [ref=e87]:
+                      - button [ref=e88]:
+                        - img [ref=e89]
+                      - button [ref=e91]:
+                        - img [ref=e92]
+                - generic [ref=e96]:
+                  - generic [ref=e97]: Brioni
+                  - heading "Свадебный костюм Brioni" [level=3] [ref=e98]
+                  - generic [ref=e100]: 280,000 ₸
+                  - generic [ref=e101]:
+                    - generic [ref=e102]: "Размер: 48L"
+                    - generic [ref=e103]: "Цвет: Черный"
+                    - generic [ref=e104]: "Материал: Шерсть Super 150s"
+            - 'link "Классический костюм Ermenegildo Zegna -16% Новинка 4.8 (24) Ermenegildo Zegna Классический костюм Ermenegildo Zegna 185,000 ₸ 220,000 ₸ Размер: 48R Цвет: Темно-синий Материал: Шерсть 100%" [ref=e105] [cursor=pointer]':
+              - /url: /product/1
+              - generic [ref=e106]:
+                - generic [ref=e107]:
+                  - img "Классический костюм Ermenegildo Zegna" [ref=e108]
+                  - generic [ref=e109]: "-16%"
+                  - generic [ref=e110]: Новинка
+                  - generic [ref=e113]:
+                    - generic [ref=e114]:
+                      - img [ref=e115]
+                      - generic [ref=e117]: "4.8"
+                      - generic [ref=e118]: (24)
+                    - generic [ref=e119]:
+                      - button [ref=e120]:
+                        - img [ref=e121]
+                      - button [ref=e123]:
+                        - img [ref=e124]
+                - generic [ref=e128]:
+                  - generic [ref=e129]: Ermenegildo Zegna
+                  - heading "Классический костюм Ermenegildo Zegna" [level=3] [ref=e130]
+                  - generic [ref=e131]:
+                    - generic [ref=e132]: 185,000 ₸
+                    - generic [ref=e133]: 220,000 ₸
+                  - generic [ref=e134]:
+                    - generic [ref=e135]: "Размер: 48R"
+                    - generic [ref=e136]: "Цвет: Темно-синий"
+                    - generic [ref=e137]: "Материал: Шерсть 100%"
+            - 'link "Бизнес костюм Kiton -15% 4.7 (15) Kiton Бизнес костюм Kiton 195,000 ₸ 230,000 ₸ Размер: 50R Цвет: Синий Материал: Шерсть Super 120s" [ref=e138] [cursor=pointer]':
+              - /url: /product/5
+              - generic [ref=e139]:
+                - generic [ref=e140]:
+                  - img "Бизнес костюм Kiton" [ref=e141]
+                  - generic [ref=e142]: "-15%"
+                  - generic [ref=e145]:
+                    - generic [ref=e146]:
+                      - img [ref=e147]
+                      - generic [ref=e149]: "4.7"
+                      - generic [ref=e150]: (15)
+                    - generic [ref=e151]:
+                      - button [ref=e152]:
+                        - img [ref=e153]
+                      - button [ref=e155]:
+                        - img [ref=e156]
+                - generic [ref=e160]:
+                  - generic [ref=e161]: Kiton
+                  - heading "Бизнес костюм Kiton" [level=3] [ref=e162]
+                  - generic [ref=e163]:
+                    - generic [ref=e164]: 195,000 ₸
+                    - generic [ref=e165]: 230,000 ₸
+                  - generic [ref=e166]:
+                    - generic [ref=e167]: "Размер: 50R"
+                    - generic [ref=e168]: "Цвет: Синий"
+                    - generic [ref=e169]: "Материал: Шерсть Super 120s"
+            - 'link "Slim Fit костюм Hugo Boss 4.6 (18) Hugo Boss Slim Fit костюм Hugo Boss 125,000 ₸ Размер: 46S Цвет: Черный Материал: Шерсть + эластан" [ref=e170] [cursor=pointer]':
+              - /url: /product/2
+              - generic [ref=e171]:
+                - generic [ref=e172]:
+                  - img "Slim Fit костюм Hugo Boss" [ref=e173]
+                  - generic [ref=e176]:
+                    - generic [ref=e177]:
+                      - img [ref=e178]
+                      - generic [ref=e180]: "4.6"
+                      - generic [ref=e181]: (18)
+                    - generic [ref=e182]:
+                      - button [ref=e183]:
+                        - img [ref=e184]
+                      - button [ref=e186]:
+                        - img [ref=e187]
+                - generic [ref=e191]:
+                  - generic [ref=e192]: Hugo Boss
+                  - heading "Slim Fit костюм Hugo Boss" [level=3] [ref=e193]
+                  - generic [ref=e195]: 125,000 ₸
+                  - generic [ref=e196]:
+                    - generic [ref=e197]: "Размер: 46S"
+                    - generic [ref=e198]: "Цвет: Черный"
+                    - generic [ref=e199]: "Материал: Шерсть + эластан"
+            - 'link "Легкий костюм Loro Piana 4.5 (9) Loro Piana Легкий костюм Loro Piana 165,000 ₸ Размер: 46R Цвет: Бежевый Материал: Кашемир + шерсть" [ref=e200] [cursor=pointer]':
+              - /url: /product/6
+              - generic [ref=e201]:
+                - generic [ref=e202]:
+                  - img "Легкий костюм Loro Piana" [ref=e203]
+                  - generic [ref=e206]:
+                    - generic [ref=e207]:
+                      - img [ref=e208]
+                      - generic [ref=e210]: "4.5"
+                      - generic [ref=e211]: (9)
+                    - generic [ref=e212]:
+                      - button [ref=e213]:
+                        - img [ref=e214]
+                      - button [ref=e216]:
+                        - img [ref=e217]
+                - generic [ref=e221]:
+                  - generic [ref=e222]: Loro Piana
+                  - heading "Легкий костюм Loro Piana" [level=3] [ref=e223]
+                  - generic [ref=e225]: 165,000 ₸
+                  - generic [ref=e226]:
+                    - generic [ref=e227]: "Размер: 46R"
+                    - generic [ref=e228]: "Цвет: Бежевый"
+                    - generic [ref=e229]: "Материал: Кашемир + шерсть"
+            - 'link "Повседневный костюм Canali 4.4 (12) Canali Повседневный костюм Canali 95,000 ₸ Размер: 50R Цвет: Серый Материал: Хлопок + шерсть" [ref=e230] [cursor=pointer]':
+              - /url: /product/3
+              - generic [ref=e231]:
+                - generic [ref=e232]:
+                  - img "Повседневный костюм Canali" [ref=e233]
+                  - generic [ref=e236]:
+                    - generic [ref=e237]:
+                      - img [ref=e238]
+                      - generic [ref=e240]: "4.4"
+                      - generic [ref=e241]: (12)
+                    - generic [ref=e242]:
+                      - button [ref=e243]:
+                        - img [ref=e244]
+                      - button [ref=e246]:
+                        - img [ref=e247]
+                - generic [ref=e251]:
+                  - generic [ref=e252]: Canali
+                  - heading "Повседневный костюм Canali" [level=3] [ref=e253]
+                  - generic [ref=e255]: 95,000 ₸
+                  - generic [ref=e256]:
+                    - generic [ref=e257]: "Размер: 50R"
+                    - generic [ref=e258]: "Цвет: Серый"
+                    - generic [ref=e259]: "Материал: Хлопок + шерсть"
+    - contentinfo [ref=e260]:
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - generic [ref=e263]:
+            - heading "Ziggler" [level=3] [ref=e264]
+            - paragraph [ref=e265]: Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
+            - generic [ref=e266]:
+              - link [ref=e267] [cursor=pointer]:
+                - /url: https://instagram.com/ziggler_kz
+                - img [ref=e268]
+              - link [ref=e272] [cursor=pointer]:
+                - /url: https://facebook.com/ziggler_kz
+                - img [ref=e273]
+              - link [ref=e275] [cursor=pointer]:
+                - /url: https://t.me/ziggler_kz
+                - img [ref=e276]
+          - generic [ref=e278]:
+            - heading "Каталог" [level=4] [ref=e279]
+            - generic [ref=e280]:
+              - link "Классические костюмы" [ref=e281] [cursor=pointer]:
+                - /url: /catalog?category=classic
+              - link "Slim Fit" [ref=e282] [cursor=pointer]:
+                - /url: /catalog?category=slim
+              - link "Casual" [ref=e283] [cursor=pointer]:
+                - /url: /catalog?category=casual
+              - link "Праздничные" [ref=e284] [cursor=pointer]:
+                - /url: /catalog?category=festive
+          - generic [ref=e285]:
+            - heading "Поддержка" [level=4] [ref=e286]
+            - generic [ref=e287]:
+              - link "Доставка и оплата" [ref=e288] [cursor=pointer]:
+                - /url: /help/delivery
+              - link "Возврат и обмен" [ref=e289] [cursor=pointer]:
+                - /url: /help/returns
+              - link "Таблица размеров" [ref=e290] [cursor=pointer]:
+                - /url: /help/sizing
+              - link "Уход за костюмами" [ref=e291] [cursor=pointer]:
+                - /url: /help/care
+          - generic [ref=e292]:
+            - heading "Контакты" [level=4] [ref=e293]
+            - generic [ref=e294]:
+              - generic [ref=e295]:
+                - img [ref=e296]
+                - generic [ref=e299]:
+                  - paragraph [ref=e300]: г. Алматы, ул. Центральная, 123
+                  - paragraph [ref=e301]: БЦ "Premium Plaza", 5 этаж
+              - generic [ref=e302]:
+                - img [ref=e303]
+                - link "+7 (727) 123-45-67" [ref=e305] [cursor=pointer]:
+                  - /url: tel:+77271234567
+              - generic [ref=e306]:
+                - img [ref=e307]
+                - link "info@ziggler.kz" [ref=e310] [cursor=pointer]:
+                  - /url: mailto:info@ziggler.kz
+        - generic [ref=e312]:
+          - generic [ref=e313]: © 2025 Ziggler.kz. Все права защищены.
+          - generic [ref=e314]:
+            - link "Политика конфиденциальности" [ref=e315] [cursor=pointer]:
+              - /url: /privacy
+            - link "Условия использования" [ref=e316] [cursor=pointer]:
+              - /url: /terms
+            - link "Cookies" [ref=e317] [cursor=pointer]:
+              - /url: /cookies
+  - generic [ref=e318]:
+    - img [ref=e320]
+    - button "Open Tanstack query devtools" [ref=e369] [cursor=pointer]:
+      - img [ref=e370]
+  - alert [ref=e419]
+```

@@ -1,0 +1,414 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Ziggler" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e7]:
+          - link "Каталог" [ref=e8] [cursor=pointer]:
+            - /url: /catalog
+          - link "Коллекции" [ref=e9] [cursor=pointer]:
+            - /url: /collections
+          - link "О нас" [ref=e10] [cursor=pointer]:
+            - /url: /about
+          - link "Блог" [ref=e11] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=e14]:
+          - textbox "Поиск костюмов..." [ref=e15]
+          - button [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+        - generic [ref=e20]:
+          - button [ref=e21] [cursor=pointer]:
+            - img [ref=e22]
+          - link "0" [ref=e24] [cursor=pointer]:
+            - /url: /favorites
+            - img [ref=e25]
+            - generic [ref=e27]: "0"
+          - link "0" [ref=e28] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e29]
+            - generic [ref=e33]: "0"
+          - link [ref=e34] [cursor=pointer]:
+            - /url: /account
+            - img [ref=e35]
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - heading "Элегантный бутик мужской одежды" [level=1] [ref=e58]
+            - paragraph [ref=e59]: Премиум костюмы ручной работы в классическом стиле
+            - generic [ref=e60]:
+              - link "Смотреть коллекцию" [ref=e61] [cursor=pointer]:
+                - /url: /catalog
+                - button "Смотреть коллекцию" [ref=e62]:
+                  - text: Смотреть коллекцию
+                  - img [ref=e63]
+              - button "Смотреть видео" [ref=e66] [cursor=pointer]:
+                - img [ref=e67]
+                - text: Смотреть видео
+          - generic [ref=e69]:
+            - generic [ref=e70]:
+              - generic [ref=e71]: 500+
+              - generic [ref=e72]: Довольных клиентов
+            - generic [ref=e73]:
+              - generic [ref=e74]: 50+
+              - generic [ref=e75]: Моделей костюмов
+            - generic [ref=e76]:
+              - generic [ref=e77]: 24/7
+              - generic [ref=e78]: Поддержка
+        - generic [ref=e79]:
+          - button [ref=e80] [cursor=pointer]
+          - button [ref=e81] [cursor=pointer]
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+        - button "←" [ref=e89] [cursor=pointer]
+        - button "→" [ref=e90] [cursor=pointer]
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - heading "Подберём идеальный костюм для вас" [level=2] [ref=e95]
+          - paragraph [ref=e96]: Ответьте на 5 вопросов и получите персональные рекомендации
+        - generic [ref=e98]:
+          - generic [ref=e99]: Вопрос 1 из 5
+          - generic [ref=e100]: 20%
+        - generic [ref=e103]:
+          - heading "Для какого случая вам нужен костюм?" [level=3] [ref=e104]
+          - generic [ref=e105]:
+            - button "💼 Деловые встречи" [ref=e106] [cursor=pointer]:
+              - generic [ref=e107]:
+                - generic [ref=e108]: 💼
+                - generic [ref=e109]: Деловые встречи
+            - button "💒 Свадьба" [ref=e110] [cursor=pointer]:
+              - generic [ref=e111]:
+                - generic [ref=e112]: 💒
+                - generic [ref=e113]: Свадьба
+            - button "🎓 Выпускной" [ref=e114] [cursor=pointer]:
+              - generic [ref=e115]:
+                - generic [ref=e116]: 🎓
+                - generic [ref=e117]: Выпускной
+            - button "🎉 Праздник" [ref=e118] [cursor=pointer]:
+              - generic [ref=e119]:
+                - generic [ref=e120]: 🎉
+                - generic [ref=e121]: Праздник
+            - button "👔 Повседневное использование" [ref=e122] [cursor=pointer]:
+              - generic [ref=e123]:
+                - generic [ref=e124]: 👔
+                - generic [ref=e125]: Повседневное использование
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - heading "Премиум коллекции" [level=2] [ref=e129]
+          - paragraph [ref=e130]: Откройте для себя тщательно подобранные коллекции костюмов, созданные с учетом последних тенденций моды и требований комфорта
+        - generic [ref=e131]:
+          - 'link "Классические костюмы Классические костюмы 25 моделей Вневременная элегантность для деловых встреч и торжественных мероприятий Цена: 75,000 - 150,000 ₸ Шерсть 100% Итальянские ткани Ручная работа" [ref=e132] [cursor=pointer]':
+            - /url: /catalog?category=classic
+            - generic [ref=e133]:
+              - generic [ref=e134]:
+                - img "Классические костюмы" [ref=e135]
+                - generic [ref=e138]:
+                  - generic [ref=e139]:
+                    - heading "Классические костюмы" [level=3] [ref=e140]
+                    - paragraph [ref=e141]: 25 моделей
+                  - img [ref=e142]
+              - generic [ref=e145]:
+                - paragraph [ref=e146]: Вневременная элегантность для деловых встреч и торжественных мероприятий
+                - generic [ref=e148]: "Цена: 75,000 - 150,000 ₸"
+                - generic [ref=e149]:
+                  - generic [ref=e150]: Шерсть 100%
+                  - generic [ref=e151]: Итальянские ткани
+                  - generic [ref=e152]: Ручная работа
+          - 'link "Slim Fit коллекция Slim Fit коллекция 18 моделей Современный крой для уверенных мужчин с активным образом жизни Цена: 65,000 - 120,000 ₸ Облегающий крой Эластичные ткани Легкий вес" [ref=e153] [cursor=pointer]':
+            - /url: /catalog?category=slim
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - img "Slim Fit коллекция" [ref=e156]
+                - generic [ref=e159]:
+                  - generic [ref=e160]:
+                    - heading "Slim Fit коллекция" [level=3] [ref=e161]
+                    - paragraph [ref=e162]: 18 моделей
+                  - img [ref=e163]
+              - generic [ref=e166]:
+                - paragraph [ref=e167]: Современный крой для уверенных мужчин с активным образом жизни
+                - generic [ref=e169]: "Цена: 65,000 - 120,000 ₸"
+                - generic [ref=e170]:
+                  - generic [ref=e171]: Облегающий крой
+                  - generic [ref=e172]: Эластичные ткани
+                  - generic [ref=e173]: Легкий вес
+          - 'link "Праздничные костюмы Праздничные костюмы 12 моделей Роскошные модели для особых случаев и семейных торжеств Цена: 95,000 - 200,000 ₸ Премиум ткани Эксклюзивный дизайн Индивидуальный пошив" [ref=e174] [cursor=pointer]':
+            - /url: /catalog?category=festive
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - img "Праздничные костюмы" [ref=e177]
+                - generic [ref=e180]:
+                  - generic [ref=e181]:
+                    - heading "Праздничные костюмы" [level=3] [ref=e182]
+                    - paragraph [ref=e183]: 12 моделей
+                  - img [ref=e184]
+              - generic [ref=e187]:
+                - paragraph [ref=e188]: Роскошные модели для особых случаев и семейных торжеств
+                - generic [ref=e190]: "Цена: 95,000 - 200,000 ₸"
+                - generic [ref=e191]:
+                  - generic [ref=e192]: Премиум ткани
+                  - generic [ref=e193]: Эксклюзивный дизайн
+                  - generic [ref=e194]: Индивидуальный пошив
+          - 'link "Casual линейка Casual линейка 20 моделей Стильные повседневные костюмы для комфортной носки Цена: 55,000 - 95,000 ₸ Легкие ткани Удобный крой Повседневный стиль" [ref=e195] [cursor=pointer]':
+            - /url: /catalog?category=casual
+            - generic [ref=e196]:
+              - generic [ref=e197]:
+                - img "Casual линейка" [ref=e198]
+                - generic [ref=e201]:
+                  - generic [ref=e202]:
+                    - heading "Casual линейка" [level=3] [ref=e203]
+                    - paragraph [ref=e204]: 20 моделей
+                  - img [ref=e205]
+              - generic [ref=e208]:
+                - paragraph [ref=e209]: Стильные повседневные костюмы для комфортной носки
+                - generic [ref=e211]: "Цена: 55,000 - 95,000 ₸"
+                - generic [ref=e212]:
+                  - generic [ref=e213]: Легкие ткани
+                  - generic [ref=e214]: Удобный крой
+                  - generic [ref=e215]: Повседневный стиль
+        - link "Смотреть все коллекции" [ref=e217] [cursor=pointer]:
+          - /url: /collections
+          - button "Смотреть все коллекции" [ref=e218]:
+            - text: Смотреть все коллекции
+            - img [ref=e219]
+      - generic [ref=e223]:
+        - generic [ref=e224]:
+          - heading "Почему выбирают Ziggler" [level=2] [ref=e225]
+          - paragraph [ref=e226]: Мы создаем не просто костюмы, мы создаем уверенность в вашем образе. Каждый клиент для нас — это партнер в создании идеального стиля.
+        - generic [ref=e227]:
+          - generic [ref=e229] [cursor=pointer]:
+            - generic [ref=e230]:
+              - img [ref=e232]
+              - generic [ref=e234]:
+                - heading "Гарантия качества" [level=3] [ref=e235]
+                - paragraph [ref=e236]: 98% положительных отзывов
+            - paragraph [ref=e237]: 100% оригинальные материалы и фурнитура. Сертификаты качества на все изделия.
+            - generic [ref=e239]: Нажмите для деталей
+          - generic [ref=e242] [cursor=pointer]:
+            - generic [ref=e243]:
+              - img [ref=e245]
+              - generic [ref=e251]:
+                - heading "Быстрая доставка" [level=3] [ref=e252]
+                - paragraph [ref=e253]: 47 городов покрытия
+            - paragraph [ref=e254]: Доставка по Казахстану за 24-48 часов. Бесплатно от 100,000 ₸.
+            - generic [ref=e256]: Нажмите для деталей
+          - generic [ref=e259] [cursor=pointer]:
+            - generic [ref=e260]:
+              - img [ref=e262]
+              - generic [ref=e265]:
+                - heading "Премиум материалы" [level=3] [ref=e266]
+                - paragraph [ref=e267]: 5+ лет опыта партнеров
+            - paragraph [ref=e268]: Итальянские и турецкие ткани. Корейское производство. Европейские стандарты.
+            - generic [ref=e270]: Нажмите для деталей
+          - generic [ref=e273] [cursor=pointer]:
+            - generic [ref=e274]:
+              - img [ref=e276]
+              - generic [ref=e278]:
+                - heading "Персональная поддержка" [level=3] [ref=e279]
+                - paragraph [ref=e280]: 24/7 поддержка
+            - paragraph [ref=e281]: Индивидуальный подход к каждому клиенту. Консультации стилиста бесплатно.
+            - generic [ref=e283]: Нажмите для деталей
+          - generic [ref=e286] [cursor=pointer]:
+            - generic [ref=e287]:
+              - img [ref=e289]
+              - generic [ref=e291]:
+                - heading "Лояльность клиентов" [level=3] [ref=e292]
+                - paragraph [ref=e293]: 15% средняя скидка
+            - paragraph [ref=e294]: Программа привилегий для постоянных клиентов. Скидки и бонусы.
+            - generic [ref=e296]: Нажмите для деталей
+          - generic [ref=e299] [cursor=pointer]:
+            - generic [ref=e300]:
+              - img [ref=e302]
+              - generic [ref=e305]:
+                - heading "30 дней на возврат" [level=3] [ref=e306]
+                - paragraph [ref=e307]: 99% удовлетворенность
+            - paragraph [ref=e308]: Полный возврат средств или обмен в течение 30 дней без объяснения причин.
+            - generic [ref=e310]: Нажмите для деталей
+        - generic [ref=e312]:
+          - generic [ref=e313]:
+            - generic [ref=e314]: 500+
+            - generic [ref=e315]: Довольных клиентов
+          - generic [ref=e316]:
+            - generic [ref=e317]: 2 года
+            - generic [ref=e318]: Гарантии на костюмы
+          - generic [ref=e319]:
+            - generic [ref=e320]: 24/7
+            - generic [ref=e321]: Поддержка клиентов
+          - generic [ref=e322]:
+            - generic [ref=e323]: 30 дней
+            - generic [ref=e324]: На возврат
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - heading "Отзывы наших клиентов" [level=2] [ref=e328]
+          - paragraph [ref=e329]: Узнайте, что говорят о нас люди, которые уже выбрали Ziggler
+        - generic [ref=e330]:
+          - generic [ref=e331]:
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - img "Алексей Иванов" [ref=e335]
+                - generic [ref=e336]:
+                  - generic [ref=e337]:
+                    - heading "Алексей Иванов" [level=3] [ref=e338]
+                    - generic [ref=e339]: • Руководитель компании
+                  - generic [ref=e340]:
+                    - img [ref=e341]
+                    - img [ref=e343]
+                    - img [ref=e345]
+                    - img [ref=e347]
+                    - img [ref=e349]
+                    - generic [ref=e351]: "5.0"
+                  - paragraph [ref=e352]: 15.01.2025
+              - generic [ref=e353]:
+                - img [ref=e354]
+                - blockquote [ref=e357]: "\"Заказал классический костюм для деловых встреч. Качество потрясающее! Ткань премиум класса, посадка идеальная. Доставили точно в срок. Очень доволен покупкой!\""
+              - img "Фото костюма" [ref=e359]
+            - generic [ref=e360]:
+              - generic [ref=e361]:
+                - generic [ref=e362]: 4.9/5
+                - generic [ref=e363]:
+                  - img [ref=e364]
+                  - img [ref=e366]
+                  - img [ref=e368]
+                  - img [ref=e370]
+                  - img [ref=e372]
+                - paragraph [ref=e374]: Средний рейтинг из 150+ отзывов
+              - generic [ref=e375]:
+                - generic [ref=e376]:
+                  - generic [ref=e377]: 98%
+                  - generic [ref=e378]: Довольных клиентов
+                - generic [ref=e379]:
+                  - generic [ref=e380]: 24ч
+                  - generic [ref=e381]: Среднее время ответа
+              - button "Читать все отзывы" [ref=e383] [cursor=pointer]
+          - generic [ref=e384]:
+            - button [ref=e385] [cursor=pointer]:
+              - img [ref=e386]
+            - generic [ref=e388]:
+              - button [ref=e389] [cursor=pointer]
+              - button [ref=e390] [cursor=pointer]
+              - button [ref=e391] [cursor=pointer]
+              - button [ref=e392] [cursor=pointer]
+            - button [ref=e393] [cursor=pointer]:
+              - img [ref=e394]
+      - generic [ref=e398]:
+        - generic [ref=e399]:
+          - heading "Будьте в курсе новинок" [level=2] [ref=e400]
+          - paragraph [ref=e401]: Подпишитесь на нашу рассылку и получайте эксклюзивные предложения, информацию о новых коллекциях и стильные советы
+        - generic [ref=e402]:
+          - generic [ref=e403]:
+            - generic [ref=e404]:
+              - img [ref=e406]
+              - heading "Подписка на новости" [level=3] [ref=e409]
+            - generic [ref=e410]:
+              - textbox "Ваш email адрес" [ref=e412]
+              - button "Подписаться на новости" [ref=e413] [cursor=pointer]
+              - paragraph [ref=e414]:
+                - text: Нажимая "Подписаться", вы соглашаетесь с
+                - link "политикой конфиденциальности" [ref=e415] [cursor=pointer]:
+                  - /url: /privacy
+          - generic [ref=e416]:
+            - heading "Что вы получите:" [level=3] [ref=e417]
+            - generic [ref=e418]:
+              - generic [ref=e419]:
+                - img [ref=e421]
+                - generic [ref=e426]:
+                  - heading "Эксклюзивные скидки" [level=4] [ref=e427]
+                  - paragraph [ref=e428]: Первыми узнавайте о распродажах и специальных предложениях
+              - generic [ref=e429]:
+                - img [ref=e431]
+                - generic [ref=e434]:
+                  - heading "Новые коллекции" [level=4] [ref=e435]
+                  - paragraph [ref=e436]: Будьте в курсе выхода новых моделей и коллекций
+              - generic [ref=e437]:
+                - img [ref=e439]
+                - generic [ref=e444]:
+                  - heading "Стильные советы" [level=4] [ref=e445]
+                  - paragraph [ref=e446]: Получайте рекомендации по сочетанию костюмов и аксессуаров
+              - generic [ref=e447]:
+                - img [ref=e449]
+                - generic [ref=e455]:
+                  - heading "Персональные предложения" [level=4] [ref=e456]
+                  - paragraph [ref=e457]: Специальные предложения на основе ваших предпочтений
+            - generic [ref=e459]:
+              - generic [ref=e460]:
+                - generic [ref=e461]: 5000+
+                - generic [ref=e462]: Подписчиков
+              - generic [ref=e463]:
+                - generic [ref=e464]: 95%
+                - generic [ref=e465]: Открываемость
+              - generic [ref=e466]:
+                - generic [ref=e467]: 2x
+                - generic [ref=e468]: Конверсия
+    - contentinfo [ref=e469]:
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - generic [ref=e472]:
+            - heading "Ziggler" [level=3] [ref=e473]
+            - paragraph [ref=e474]: Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
+            - generic [ref=e475]:
+              - link [ref=e476] [cursor=pointer]:
+                - /url: https://instagram.com/ziggler_kz
+                - img [ref=e477]
+              - link [ref=e481] [cursor=pointer]:
+                - /url: https://facebook.com/ziggler_kz
+                - img [ref=e482]
+              - link [ref=e484] [cursor=pointer]:
+                - /url: https://t.me/ziggler_kz
+                - img [ref=e485]
+          - generic [ref=e487]:
+            - heading "Каталог" [level=4] [ref=e488]
+            - generic [ref=e489]:
+              - link "Классические костюмы" [ref=e490] [cursor=pointer]:
+                - /url: /catalog?category=classic
+              - link "Slim Fit" [ref=e491] [cursor=pointer]:
+                - /url: /catalog?category=slim
+              - link "Casual" [ref=e492] [cursor=pointer]:
+                - /url: /catalog?category=casual
+              - link "Праздничные" [ref=e493] [cursor=pointer]:
+                - /url: /catalog?category=festive
+          - generic [ref=e494]:
+            - heading "Поддержка" [level=4] [ref=e495]
+            - generic [ref=e496]:
+              - link "Доставка и оплата" [ref=e497] [cursor=pointer]:
+                - /url: /help/delivery
+              - link "Возврат и обмен" [ref=e498] [cursor=pointer]:
+                - /url: /help/returns
+              - link "Таблица размеров" [ref=e499] [cursor=pointer]:
+                - /url: /help/sizing
+              - link "Уход за костюмами" [ref=e500] [cursor=pointer]:
+                - /url: /help/care
+          - generic [ref=e501]:
+            - heading "Контакты" [level=4] [ref=e502]
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - img [ref=e505]
+                - generic [ref=e508]:
+                  - paragraph [ref=e509]: г. Алматы, ул. Центральная, 123
+                  - paragraph [ref=e510]: БЦ "Premium Plaza", 5 этаж
+              - generic [ref=e511]:
+                - img [ref=e512]
+                - link "+7 (727) 123-45-67" [ref=e514] [cursor=pointer]:
+                  - /url: tel:+77271234567
+              - generic [ref=e515]:
+                - img [ref=e516]
+                - link "info@ziggler.kz" [ref=e519] [cursor=pointer]:
+                  - /url: mailto:info@ziggler.kz
+        - generic [ref=e521]:
+          - generic [ref=e522]: © 2025 Ziggler.kz. Все права защищены.
+          - generic [ref=e523]:
+            - link "Политика конфиденциальности" [ref=e524] [cursor=pointer]:
+              - /url: /privacy
+            - link "Условия использования" [ref=e525] [cursor=pointer]:
+              - /url: /terms
+            - link "Cookies" [ref=e526] [cursor=pointer]:
+              - /url: /cookies
+  - generic [ref=e527]:
+    - img [ref=e529]
+    - button "Open Tanstack query devtools" [ref=e578] [cursor=pointer]:
+      - img [ref=e579]
+  - alert [ref=e628]
+```

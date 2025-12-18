@@ -1,0 +1,331 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - link "Ziggler" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - navigation [ref=e7]:
+          - link "Каталог" [ref=e8] [cursor=pointer]:
+            - /url: /catalog
+          - link "Коллекции" [ref=e9] [cursor=pointer]:
+            - /url: /collections
+          - link "О нас" [ref=e10] [cursor=pointer]:
+            - /url: /about
+          - link "Блог" [ref=e11] [cursor=pointer]:
+            - /url: /blog
+        - generic [ref=e14]:
+          - textbox "Поиск костюмов..." [ref=e15]
+          - button [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+        - generic [ref=e20]:
+          - button [ref=e21] [cursor=pointer]:
+            - img [ref=e22]
+          - link "0" [ref=e24] [cursor=pointer]:
+            - /url: /favorites
+            - img [ref=e25]
+            - generic [ref=e27]: "0"
+          - link "0" [ref=e28] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e29]
+            - generic [ref=e33]: "0"
+          - link [ref=e34] [cursor=pointer]:
+            - /url: /account
+            - img [ref=e35]
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e42]:
+          - navigation [ref=e43]:
+            - link "Главная" [ref=e44] [cursor=pointer]:
+              - /url: /
+            - text: /Каталог
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - heading "Каталог костюмов" [level=1] [ref=e47]
+              - paragraph [ref=e48]: 6 товаров
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - button [ref=e51] [cursor=pointer]:
+                  - img [ref=e52]
+                - button [ref=e54] [cursor=pointer]:
+                  - img [ref=e55]
+              - combobox [ref=e56]:
+                - option "По популярности" [selected]
+                - option "Сначала дешевые"
+                - option "Сначала дорогие"
+                - option "По рейтингу"
+                - option "Сначала новые"
+        - generic [ref=e58]:
+          - complementary [ref=e59]:
+            - generic [ref=e60]:
+              - heading "Категории" [level=3] [ref=e61]
+              - generic [ref=e62]:
+                - button "Все (6)" [ref=e63] [cursor=pointer]:
+                  - generic [ref=e64]:
+                    - generic [ref=e65]: Все
+                    - generic [ref=e66]: (6)
+                - button "Классические (2)" [ref=e67] [cursor=pointer]:
+                  - generic [ref=e68]:
+                    - generic [ref=e69]: Классические
+                    - generic [ref=e70]: (2)
+                - button "Slim Fit (1)" [ref=e71] [cursor=pointer]:
+                  - generic [ref=e72]:
+                    - generic [ref=e73]: Slim Fit
+                    - generic [ref=e74]: (1)
+                - button "Casual (2)" [ref=e75] [cursor=pointer]:
+                  - generic [ref=e76]:
+                    - generic [ref=e77]: Casual
+                    - generic [ref=e78]: (2)
+                - button "Праздничные (1)" [ref=e79] [cursor=pointer]:
+                  - generic [ref=e80]:
+                    - generic [ref=e81]: Праздничные
+                    - generic [ref=e82]: (1)
+            - generic [ref=e83]:
+              - heading "Цена" [level=3] [ref=e84]
+              - generic [ref=e85]:
+                - button "До 50,000 ₸" [ref=e86] [cursor=pointer]
+                - button "50,000 - 100,000 ₸" [ref=e87] [cursor=pointer]
+                - button "100,000 - 150,000 ₸" [ref=e88] [cursor=pointer]
+                - button "150,000 - 200,000 ₸" [ref=e89] [cursor=pointer]
+                - button "Более 200,000 ₸" [ref=e90] [cursor=pointer]
+            - generic [ref=e91]:
+              - heading "Размер" [level=3] [ref=e92]
+              - generic [ref=e93]:
+                - button "44R" [ref=e94] [cursor=pointer]
+                - button "46R" [ref=e95] [cursor=pointer]
+                - button "48R" [ref=e96] [cursor=pointer]
+                - button "50R" [ref=e97] [cursor=pointer]
+                - button "52R" [ref=e98] [cursor=pointer]
+                - button "44S" [ref=e99] [cursor=pointer]
+                - button "46S" [ref=e100] [cursor=pointer]
+                - button "48S" [ref=e101] [cursor=pointer]
+                - button "50S" [ref=e102] [cursor=pointer]
+                - button "52S" [ref=e103] [cursor=pointer]
+            - generic [ref=e104]:
+              - heading "Цвет" [level=3] [ref=e105]
+              - generic [ref=e106]:
+                - button "Черный" [ref=e107] [cursor=pointer]
+                - button "Темно-синий" [ref=e108] [cursor=pointer]
+                - button "Серый" [ref=e109] [cursor=pointer]
+                - button "Бежевый" [ref=e110] [cursor=pointer]
+                - button "Синий" [ref=e111] [cursor=pointer]
+                - button "Коричневый" [ref=e112] [cursor=pointer]
+          - main [ref=e113]:
+            - generic [ref=e114]:
+              - 'link "Свадебный костюм Brioni Новинка 4.9 (8) Brioni Свадебный костюм Brioni 280,000 ₸ Размер: 48L Цвет: Черный Материал: Шерсть Super 150s" [ref=e115] [cursor=pointer]':
+                - /url: /product/4
+                - generic [ref=e116]:
+                  - generic [ref=e117]:
+                    - img "Свадебный костюм Brioni" [ref=e118]
+                    - generic [ref=e119]: Новинка
+                    - generic [ref=e122]:
+                      - generic [ref=e123]:
+                        - img [ref=e124]
+                        - generic [ref=e126]: "4.9"
+                        - generic [ref=e127]: (8)
+                      - generic [ref=e128]:
+                        - button [ref=e129]:
+                          - img [ref=e130]
+                        - button [ref=e132]:
+                          - img [ref=e133]
+                  - generic [ref=e137]:
+                    - generic [ref=e138]: Brioni
+                    - heading "Свадебный костюм Brioni" [level=3] [ref=e139]
+                    - generic [ref=e141]: 280,000 ₸
+                    - generic [ref=e142]:
+                      - generic [ref=e143]: "Размер: 48L"
+                      - generic [ref=e144]: "Цвет: Черный"
+                      - generic [ref=e145]: "Материал: Шерсть Super 150s"
+              - 'link "Классический костюм Ermenegildo Zegna -16% Новинка 4.8 (24) Ermenegildo Zegna Классический костюм Ermenegildo Zegna 185,000 ₸ 220,000 ₸ Размер: 48R Цвет: Темно-синий Материал: Шерсть 100%" [ref=e146] [cursor=pointer]':
+                - /url: /product/1
+                - generic [ref=e147]:
+                  - generic [ref=e148]:
+                    - img "Классический костюм Ermenegildo Zegna" [ref=e149]
+                    - generic [ref=e150]: "-16%"
+                    - generic [ref=e151]: Новинка
+                    - generic [ref=e154]:
+                      - generic [ref=e155]:
+                        - img [ref=e156]
+                        - generic [ref=e158]: "4.8"
+                        - generic [ref=e159]: (24)
+                      - generic [ref=e160]:
+                        - button [ref=e161]:
+                          - img [ref=e162]
+                        - button [ref=e164]:
+                          - img [ref=e165]
+                  - generic [ref=e169]:
+                    - generic [ref=e170]: Ermenegildo Zegna
+                    - heading "Классический костюм Ermenegildo Zegna" [level=3] [ref=e171]
+                    - generic [ref=e172]:
+                      - generic [ref=e173]: 185,000 ₸
+                      - generic [ref=e174]: 220,000 ₸
+                    - generic [ref=e175]:
+                      - generic [ref=e176]: "Размер: 48R"
+                      - generic [ref=e177]: "Цвет: Темно-синий"
+                      - generic [ref=e178]: "Материал: Шерсть 100%"
+              - 'link "Бизнес костюм Kiton -15% 4.7 (15) Kiton Бизнес костюм Kiton 195,000 ₸ 230,000 ₸ Размер: 50R Цвет: Синий Материал: Шерсть Super 120s" [ref=e179] [cursor=pointer]':
+                - /url: /product/5
+                - generic [ref=e180]:
+                  - generic [ref=e181]:
+                    - img "Бизнес костюм Kiton" [ref=e182]
+                    - generic [ref=e183]: "-15%"
+                    - generic [ref=e186]:
+                      - generic [ref=e187]:
+                        - img [ref=e188]
+                        - generic [ref=e190]: "4.7"
+                        - generic [ref=e191]: (15)
+                      - generic [ref=e192]:
+                        - button [ref=e193]:
+                          - img [ref=e194]
+                        - button [ref=e196]:
+                          - img [ref=e197]
+                  - generic [ref=e201]:
+                    - generic [ref=e202]: Kiton
+                    - heading "Бизнес костюм Kiton" [level=3] [ref=e203]
+                    - generic [ref=e204]:
+                      - generic [ref=e205]: 195,000 ₸
+                      - generic [ref=e206]: 230,000 ₸
+                    - generic [ref=e207]:
+                      - generic [ref=e208]: "Размер: 50R"
+                      - generic [ref=e209]: "Цвет: Синий"
+                      - generic [ref=e210]: "Материал: Шерсть Super 120s"
+              - 'link "Slim Fit костюм Hugo Boss 4.6 (18) Hugo Boss Slim Fit костюм Hugo Boss 125,000 ₸ Размер: 46S Цвет: Черный Материал: Шерсть + эластан" [ref=e211] [cursor=pointer]':
+                - /url: /product/2
+                - generic [ref=e212]:
+                  - generic [ref=e213]:
+                    - img "Slim Fit костюм Hugo Boss" [ref=e214]
+                    - generic [ref=e217]:
+                      - generic [ref=e218]:
+                        - img [ref=e219]
+                        - generic [ref=e221]: "4.6"
+                        - generic [ref=e222]: (18)
+                      - generic [ref=e223]:
+                        - button [ref=e224]:
+                          - img [ref=e225]
+                        - button [ref=e227]:
+                          - img [ref=e228]
+                  - generic [ref=e232]:
+                    - generic [ref=e233]: Hugo Boss
+                    - heading "Slim Fit костюм Hugo Boss" [level=3] [ref=e234]
+                    - generic [ref=e236]: 125,000 ₸
+                    - generic [ref=e237]:
+                      - generic [ref=e238]: "Размер: 46S"
+                      - generic [ref=e239]: "Цвет: Черный"
+                      - generic [ref=e240]: "Материал: Шерсть + эластан"
+              - 'link "Легкий костюм Loro Piana 4.5 (9) Loro Piana Легкий костюм Loro Piana 165,000 ₸ Размер: 46R Цвет: Бежевый Материал: Кашемир + шерсть" [ref=e241] [cursor=pointer]':
+                - /url: /product/6
+                - generic [ref=e242]:
+                  - generic [ref=e243]:
+                    - img "Легкий костюм Loro Piana" [ref=e244]
+                    - generic [ref=e247]:
+                      - generic [ref=e248]:
+                        - img [ref=e249]
+                        - generic [ref=e251]: "4.5"
+                        - generic [ref=e252]: (9)
+                      - generic [ref=e253]:
+                        - button [ref=e254]:
+                          - img [ref=e255]
+                        - button [ref=e257]:
+                          - img [ref=e258]
+                  - generic [ref=e262]:
+                    - generic [ref=e263]: Loro Piana
+                    - heading "Легкий костюм Loro Piana" [level=3] [ref=e264]
+                    - generic [ref=e266]: 165,000 ₸
+                    - generic [ref=e267]:
+                      - generic [ref=e268]: "Размер: 46R"
+                      - generic [ref=e269]: "Цвет: Бежевый"
+                      - generic [ref=e270]: "Материал: Кашемир + шерсть"
+              - 'link "Повседневный костюм Canali 4.4 (12) Canali Повседневный костюм Canali 95,000 ₸ Размер: 50R Цвет: Серый Материал: Хлопок + шерсть" [ref=e271] [cursor=pointer]':
+                - /url: /product/3
+                - generic [ref=e272]:
+                  - generic [ref=e273]:
+                    - img "Повседневный костюм Canali" [ref=e274]
+                    - generic [ref=e277]:
+                      - generic [ref=e278]:
+                        - img [ref=e279]
+                        - generic [ref=e281]: "4.4"
+                        - generic [ref=e282]: (12)
+                      - generic [ref=e283]:
+                        - button [ref=e284]:
+                          - img [ref=e285]
+                        - button [ref=e287]:
+                          - img [ref=e288]
+                  - generic [ref=e292]:
+                    - generic [ref=e293]: Canali
+                    - heading "Повседневный костюм Canali" [level=3] [ref=e294]
+                    - generic [ref=e296]: 95,000 ₸
+                    - generic [ref=e297]:
+                      - generic [ref=e298]: "Размер: 50R"
+                      - generic [ref=e299]: "Цвет: Серый"
+                      - generic [ref=e300]: "Материал: Хлопок + шерсть"
+    - contentinfo [ref=e301]:
+      - generic [ref=e302]:
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - heading "Ziggler" [level=3] [ref=e305]
+            - paragraph [ref=e306]: Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
+            - generic [ref=e307]:
+              - link [ref=e308] [cursor=pointer]:
+                - /url: https://instagram.com/ziggler_kz
+                - img [ref=e309]
+              - link [ref=e312] [cursor=pointer]:
+                - /url: https://facebook.com/ziggler_kz
+                - img [ref=e313]
+              - link [ref=e315] [cursor=pointer]:
+                - /url: https://t.me/ziggler_kz
+                - img [ref=e316]
+          - generic [ref=e318]:
+            - heading "Каталог" [level=4] [ref=e319]
+            - generic [ref=e320]:
+              - link "Классические костюмы" [ref=e321] [cursor=pointer]:
+                - /url: /catalog?category=classic
+              - link "Slim Fit" [ref=e322] [cursor=pointer]:
+                - /url: /catalog?category=slim
+              - link "Casual" [ref=e323] [cursor=pointer]:
+                - /url: /catalog?category=casual
+              - link "Праздничные" [ref=e324] [cursor=pointer]:
+                - /url: /catalog?category=festive
+          - generic [ref=e325]:
+            - heading "Поддержка" [level=4] [ref=e326]
+            - generic [ref=e327]:
+              - link "Доставка и оплата" [ref=e328] [cursor=pointer]:
+                - /url: /help/delivery
+              - link "Возврат и обмен" [ref=e329] [cursor=pointer]:
+                - /url: /help/returns
+              - link "Таблица размеров" [ref=e330] [cursor=pointer]:
+                - /url: /help/sizing
+              - link "Уход за костюмами" [ref=e331] [cursor=pointer]:
+                - /url: /help/care
+          - generic [ref=e332]:
+            - heading "Контакты" [level=4] [ref=e333]
+            - generic [ref=e334]:
+              - generic [ref=e335]:
+                - img [ref=e336]
+                - generic [ref=e339]:
+                  - paragraph [ref=e340]: г. Алматы, ул. Центральная, 123
+                  - paragraph [ref=e341]: БЦ "Premium Plaza", 5 этаж
+              - generic [ref=e342]:
+                - img [ref=e343]
+                - link "+7 (727) 123-45-67" [ref=e345] [cursor=pointer]:
+                  - /url: tel:+77271234567
+              - generic [ref=e346]:
+                - img [ref=e347]
+                - link "info@ziggler.kz" [ref=e350] [cursor=pointer]:
+                  - /url: mailto:info@ziggler.kz
+        - generic [ref=e352]:
+          - generic [ref=e353]: © 2025 Ziggler.kz. Все права защищены.
+          - generic [ref=e354]:
+            - link "Политика конфиденциальности" [ref=e355] [cursor=pointer]:
+              - /url: /privacy
+            - link "Условия использования" [ref=e356] [cursor=pointer]:
+              - /url: /terms
+            - link "Cookies" [ref=e357] [cursor=pointer]:
+              - /url: /cookies
+  - generic [ref=e358]:
+    - img [ref=e360]
+    - button "Open Tanstack query devtools" [ref=e408] [cursor=pointer]:
+      - img [ref=e409]
+  - alert [ref=e457]
+```
