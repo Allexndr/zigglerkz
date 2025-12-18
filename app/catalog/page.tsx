@@ -188,7 +188,7 @@ export default function CatalogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-dark-background">
       {/* Header */}
       <div className="border-b border-border bg-surface/50 backdrop-blur-sm sticky top-0 z-40">
         <div className="container-padding">
@@ -271,7 +271,7 @@ export default function CatalogPage() {
           {/* Filters Sidebar */}
           <aside className={`w-full lg:w-64 space-y-6 ${showFilters ? 'block' : 'hidden lg:block'}`}>
             {/* Categories */}
-            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+            <div className="bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm p-6 rounded-lg border border-border/50 dark:border-dark-border/30">
               <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Категории</h3>
               <div className="space-y-2">
                 {categories.map(category => (
@@ -294,7 +294,7 @@ export default function CatalogPage() {
             </div>
 
             {/* Price Range */}
-            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+            <div className="bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm p-6 rounded-lg border border-border/50 dark:border-dark-border/30">
               <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Цена</h3>
               <div className="space-y-2">
                 {priceRanges.map(range => (
@@ -316,7 +316,7 @@ export default function CatalogPage() {
             </div>
 
             {/* Size */}
-            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+            <div className="bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm p-6 rounded-lg border border-border/50 dark:border-dark-border/30">
               <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Размер</h3>
               <div className="grid grid-cols-3 gap-2">
                 {sizes.map(size => (
@@ -336,7 +336,7 @@ export default function CatalogPage() {
             </div>
 
             {/* Color */}
-            <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+            <div className="bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm p-6 rounded-lg border border-border/50 dark:border-dark-border/30">
               <h3 className="font-semibold text-text-primary dark:text-dark-text-primary mb-4">Цвет</h3>
               <div className="grid grid-cols-2 gap-2">
                 {colors.map(color => (
@@ -357,7 +357,7 @@ export default function CatalogPage() {
 
             {/* Clear Filters */}
             {(selectedSizes.length > 0 || selectedColors.length > 0 || selectedPriceRange) && (
-              <div className="bg-surface dark:bg-dark-surface p-6 rounded-lg">
+              <div className="bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm p-6 rounded-lg border border-border/50 dark:border-dark-border/30">
                 <Button onClick={clearFilters} variant="ghost" className="w-full text-text-primary dark:text-dark-text-primary">
                   Очистить фильтры
                 </Button>
@@ -386,7 +386,7 @@ export default function CatalogPage() {
               }`}>
                 {sortedProducts.map(product => (
                   <Link key={product.id} href={`/product/${product.id}`}>
-                    <Card className="card-hover group overflow-hidden">
+                    <Card className="card-hover group overflow-hidden bg-surface/95 dark:bg-dark-surface/90 backdrop-blur-sm border-border dark:border-dark-border/50">
                       <div className="relative aspect-[3/4] overflow-hidden">
                         <Image
                           src={product.image}
