@@ -125,6 +125,7 @@ export interface Review {
 
 // UI types
 export type Theme = 'light' | 'dark';
+export type Language = 'ru' | 'kk' | 'en';
 
 export interface FilterOptions {
   priceRange: [number, number];

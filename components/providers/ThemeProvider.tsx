@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState } from 'react'
-import type { Theme } from '@/types'
+import type { Theme, Language } from '@/types'
 
 interface ThemeContextType {
   theme: Theme
@@ -29,6 +29,15 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       const root = document.documentElement
+
+      // Add transition class for smooth theme switching
+      root.classList.add('theme-transitioning')
+
+      // Remove transition class after animation completes
+      setTimeout(() => {
+        root.classList.remove('theme-transitioning')
+      }, 500)
+
       root.classList.remove('light', 'dark')
       root.classList.add(theme)
       localStorage.setItem('ziggler-theme', theme)

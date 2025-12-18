@@ -14,7 +14,7 @@ async def cmd_cart(message: Message):
     user_id = message.from_user.id
 
     # Получаем корзину пользователя
-    cart = await CartService.get_cart(user_id)
+    cart = await CartService.get_cart(user_id=user_id)
 
     if not cart or not cart["items"]:
         text = (
@@ -70,7 +70,7 @@ async def callback_cart(callback: CallbackQuery):
     user_id = callback.from_user.id
 
     # Получаем корзину пользователя
-    cart = await CartService.get_cart(user_id)
+    cart = await CartService.get_cart(user_id=user_id)
 
     if not cart or not cart["items"]:
         text = (
@@ -125,7 +125,7 @@ async def callback_clear_cart(callback: CallbackQuery):
     user_id = callback.from_user.id
 
     # Очищаем корзину через сервис
-    await CartService.clear_cart(user_id)
+    await CartService.clear_cart(user_id=user_id)
 
     text = (
         "🗑️ <b>Корзина очищена</b>\n\n"

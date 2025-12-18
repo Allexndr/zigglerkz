@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ThemeProvider } from '@/components/providers/ThemeProvider'
+import { LanguageProvider } from '@/components/providers/LanguageProvider'
 import { QueryProvider } from '@/components/providers/QueryProvider'
 import { Toaster } from '@/components/ui/Toaster'
 
@@ -52,18 +53,20 @@ export default function RootLayout({
   return (
     <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
       <body className="min-h-screen bg-background text-text-primary dark:bg-dark-background dark:text-dark-text-primary">
-        <QueryProvider>
-          <ThemeProvider>
-            <div className="flex min-h-screen flex-col">
-              <Header />
-              <main className="flex-1">
-                {children}
-              </main>
-              <Footer />
-            </div>
-            <Toaster />
-          </ThemeProvider>
-        </QueryProvider>
+        <LanguageProvider>
+          <QueryProvider>
+            <ThemeProvider>
+              <div className="flex min-h-screen flex-col">
+                <Header />
+                <main className="flex-1">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+              <Toaster />
+            </ThemeProvider>
+          </QueryProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

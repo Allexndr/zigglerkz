@@ -3,11 +3,11 @@ import { Instagram, Facebook, MessageCircle, MapPin, Phone, Mail } from 'lucide-
 
 export function Footer() {
   return (
-    <footer className="bg-surface border-t border-border dark:bg-dark-surface dark:border-dark-border">
-      <div className="container-padding section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-surface border-t border-border dark:bg-dark-surface dark:border-dark-border transition-all duration-500 ease-in-out">
+      <div className="container-padding py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <h3 className="text-xl font-bold text-accent">Ziggler</h3>
             <p className="text-text-secondary dark:text-dark-text-secondary">
               Премиум костюмы для уверенных мужчин. Качество, стиль и комфорт в каждой детали.
@@ -41,9 +41,9 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary">Каталог</h4>
-            <div className="space-y-2">
+          <div className="space-y-6">
+            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary text-lg">Каталог</h4>
+            <div className="space-y-3">
               <Link href="/catalog?category=classic" className="block text-text-secondary hover:text-accent transition-colors">
                 Классические костюмы
               </Link>
@@ -60,9 +60,9 @@ export function Footer() {
           </div>
 
           {/* Customer Service */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary">Поддержка</h4>
-            <div className="space-y-2">
+          <div className="space-y-6">
+            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary text-lg">Поддержка</h4>
+            <div className="space-y-3">
               <Link href="/help/delivery" className="block text-text-secondary hover:text-accent transition-colors">
                 Доставка и оплата
               </Link>
@@ -79,9 +79,9 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary">Контакты</h4>
-            <div className="space-y-3">
+          <div className="space-y-6">
+            <h4 className="font-semibold text-text-primary dark:text-dark-text-primary text-lg">Контакты</h4>
+            <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="text-text-secondary mt-0.5" />
                 <div>
@@ -118,8 +118,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-border dark:border-dark-border mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t border-border dark:border-dark-border mt-12 pt-12">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-text-secondary dark:text-dark-text-secondary text-sm">
               © 2025 Ziggler.kz. Все права защищены.
             </div>

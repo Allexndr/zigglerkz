@@ -3,6 +3,7 @@ from aiogram.types import CallbackQuery, Message
 from aiogram.filters import Command
 from keyboards.main_menu import get_categories_keyboard, get_back_to_menu_keyboard, get_product_actions_keyboard
 from services.product_service import ProductService
+from services.cart_service import CartService
 from typing import List, Dict, Any
 
 router = Router()
@@ -139,11 +140,30 @@ def get_product_variants(product: dict) -> tuple[List[str], List[Dict[str, Any]]
 @router.callback_query(F.data.startswith("add_to_cart_"))
 async def callback_add_to_cart(callback: CallbackQuery):
     """Добавить товар в корзину"""
-    product_id = int(callback.data.replace("add_to_cart_", ""))
+    try:
+        product_id = callback.data.replace("add_to_cart_", "")
+        user_id = callback.from_user.id
 
-    # TODO: Реализовать логику добавления в корзину
-    # Пока просто показываем сообщение
-    await callback.answer("✅ Товар добавлен в корзину!", show_alert=True)
+        # Получаем размеры и цвета товара для выбора
+        # Пока добавляем с дефолтными значениями
+        size = "M"  # TODO: Добавить выбор размера
+        color = "Черный"  # TODO: Добавить выбор цвета
+        quantity = 1
+
+        # Добавляем в корзину
+        cart = await CartService.add_to_cart(
+            product_id=product_id,
+            size=size,
+            color=color,
+            quantity=quantity,
+            user_id=user_id
+        )
+
+        await callback.answer(f"✅ Товар добавлен в корзину! ({cart['totalItems']} товаров)", show_alert=True)
+
+    except Exception as e:
+        print(f"Error adding to cart: {e}")
+        await callback.answer("❌ Ошибка при добавлении в корзину", show_alert=True)
 
 @router.callback_query(F.data.startswith("favorite_"))
 async def callback_toggle_favorite(callback: CallbackQuery):
